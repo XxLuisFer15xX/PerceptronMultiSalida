@@ -18,12 +18,91 @@ import java.util.Scanner;
  */
 public class Inicializar {
     
-    public static void Inicializar(){
+    public static void InicializarTablaEntrenamiento(
+            TablaEntrenamiento t,
+            ArrayList<ArrayList<Integer>> vectorEntrada
+            , ArrayList<ArrayList<Integer>> vectorSalida
+    ){
         
         
+        // Inicializar TablaEntradas
+        int tablaEntradas[][] = new int[t.getnFilas()][t.getnX()];
+        for ( int i = 0 ; i < t.getnFilas() ; i++ ){
+            for ( int j = 0 ; j < t.getnX() ; j++ ){
+                tablaEntradas[i][j] = vectorEntrada.get(i).get(j);
+            }
+	}
+        t.setTablaEntradas(tablaEntradas);
+        
+        // Inicializar Target
+        int tablaTarget[][] = new int[t.getnFilas()][t.getnY()];
+        for ( int i = 0 ; i < t.getnFilas() ; i++ ){
+            for ( int j = 0 ; j < t.getnY() ; j++ ){
+                tablaTarget[i][j] = vectorSalida.get(i).get(j);
+            }
+	}
+        t.setTablaTarget(tablaTarget);
+        
+        // Inicializar Bias
+        int bias[][] = new int[t.getnFilas()][t.getnY()];
+        for ( int i = 0 ; i < t.getnFilas() ; i++ ){
+            for ( int j = 0 ; j < t.getnY() ; j++ ){
+                bias[i][j] = 1;
+            }
+	}
+        t.setTablaBias(bias);
     }
     
-    public static boolean leerCsv(String nombreArchivo, ArrayList<ArrayList<Integer>> vectorEntrada, ArrayList<ArrayList<Integer>> vectorSalida, int nEntradas, int nSalidas){
+    
+    public static void InicializarPerceptron(Perceptron p){
+        
+        // Inicializar atributos del perceptron
+        int net[][] = new int[p.getnFilas()][p.getnY()];
+        int out[][] = new int[p.getnFilas()][p.getnY()];
+        int pesos_bias[][] = new int[p.getnFilas()][p.getnY()];
+        int cambio_pesos_bias[][] = new int[p.getnFilas()][p.getnY()];
+        
+        for ( int i = 0 ; i < p.getnFilas() ; i++ ){
+	    for ( int j = 0 ; j < p.getnY() ; j++ ){
+                net[i][j] = 0;
+                out[i][j] = 0;
+                pesos_bias[i][j] = 0;
+                cambio_pesos_bias[i][j] = 0;
+            }
+        }
+        p.setYj(net);
+        p.setY_inj(out);
+        p.setWb(pesos_bias);
+        p.setWbChange(cambio_pesos_bias);
+        
+        // Inicializar Atributos Pesos
+        int pesos_xi[][][] = new int[p.getnFilas()][p.getnX()][p.getnY()];
+        int cambio_pesos_xi[][][] = new int[p.getnFilas()][p.getnX()][p.getnY()];
+        for ( int i = 0 ; i < p.getnFilas() ; i++ ){
+	    for ( int k = 0 ; k < p.getnX() ; k++ ){
+                for ( int j = 0 ; j < p.getnY() ; j++ ){
+                    pesos_xi[i][k][j] = 0;
+                    cambio_pesos_xi[i][k][j] = 0;
+                }
+            }
+        }
+        p.setW(pesos_xi);
+        p.setWChange(cambio_pesos_xi);
+    }
+    
+    
+    
+    public static int leerFilasCsv(
+            String nombreArchivo
+            , ArrayList<ArrayList<Integer>> vectorEntrada
+            , ArrayList<ArrayList<Integer>> vectorSalida
+            , int nEntradas
+            , int nSalidas
+    ){
+        
+        
+        
+        int filas = 0;
         File file= new File(nombreArchivo);
 
         // this gives you a 2-dimensional array of strings
@@ -47,6 +126,7 @@ public class Inicializar {
 
         // the following code lets you iterate through the 2-dimensional array
         for(List<String> line: lines) {
+            filas++;
             int columnNo = 1;
             ArrayList<Integer> lineaEntrada = new ArrayList<>();            
             ArrayList<Integer> lineaSalida = new ArrayList<>();
@@ -64,11 +144,9 @@ public class Inicializar {
             }else{
                 vectorEntrada.clear();
                 vectorSalida.clear();
-                return true;
+                return -1;
             }
         }
-        System.out.println(vectorEntrada);
-        System.out.println(vectorSalida);
-        return false;
+        return filas;
     }
 }

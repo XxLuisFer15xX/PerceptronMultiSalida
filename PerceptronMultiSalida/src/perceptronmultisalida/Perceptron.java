@@ -18,24 +18,44 @@ public class Perceptron {
     private int nFilas; // Lineas de Datos
     
     // <==={Atributos Pesos}===>
-    private int w[][][] = new int[nFilas][nX][nY]; // Pesos xi
-    private int b[][] = new int[nFilas][nY]; // Pesos bj
+    private int w[][][]; // [nFilas][nX][nY] - Pesos xi 
+    private int wb[][]; // [nFilas][nY] - Pesos bj
     
     // <==={Atributos Cambio Pesos}===>
-    private int wChange[][][] = new int[nFilas][nX][nY]; // Cambio Pesos xi
-    private int bChange[][] = new int[nFilas][nY]; // Cambio Pesos bj
+    private int wChange[][][]; // [nFilas][nX][nY] - Cambio Pesos xi
+    private int wbChange[][]; // [nFilas][nY] - Cambio Pesos bj
     
     // <==={Atributos Funcion de Activacion}===>
-    private int y_inj[][] = new int[nFilas][nY]; // NET
-    private int yj[][] = new int[nFilas][nY]; // OUT
+    private int y_inj[][]; // [nFilas][nY] - NET 
+    private int yj[][]; // [nFilas][nY] - OUT 
     
     
-    public Perceptron(int alfa, int teta, int nEntradas, int nSalidas, int nFilas){
+    public Perceptron(
+            int alfa,
+            int teta,
+            int nEntradas,
+            int nSalidas,
+            int nFilas,
+            
+            int w[][][],
+            int wb[][],
+            int wChange[][][],
+            int wbChange[][],
+            int y_inj[][],
+            int yj[][]
+    ){
         this.alfa = alfa;
         this.teta = teta;
         this.nX = nEntradas;
         this.nY = nSalidas;
         this.nFilas = nFilas;
+        
+        this.w = w;
+        this.wb = wb;
+        this.wChange = wChange;
+        this.wbChange = wbChange;
+        this.y_inj = y_inj;
+        this.yj = yj;
     }
 
     /**
@@ -123,45 +143,45 @@ public class Perceptron {
     }
 
     /**
-     * @return the b
+     * @return the wb
      */
-    public int[][] getB() {
-        return b;
+    public int[][] getWb() {
+        return wb;
     }
 
     /**
-     * @param b the b to set
+     * @param wb the b to set
      */
-    public void setB(int[][] b) {
-        this.b = b;
+    public void setWb(int[][] wb) {
+        this.wb = wb;
     }
 
     /**
      * @return the wChange
      */
-    public int[][][] getwChange() {
+    public int[][][] getWChange() {
         return wChange;
     }
 
     /**
      * @param wChange the wChange to set
      */
-    public void setwChange(int[][][] wChange) {
+    public void setWChange(int[][][] wChange) {
         this.wChange = wChange;
     }
 
     /**
-     * @return the bChange
+     * @return the wbChange
      */
-    public int[][] getbChange() {
-        return bChange;
+    public int[][] getWbChange() {
+        return wbChange;
     }
 
     /**
-     * @param bChange the bChange to set
+     * @param wbChange the bChange to set
      */
-    public void setbChange(int[][] bChange) {
-        this.bChange = bChange;
+    public void setWbChange(int[][] wbChange) {
+        this.wbChange = wbChange;
     }
 
     /**

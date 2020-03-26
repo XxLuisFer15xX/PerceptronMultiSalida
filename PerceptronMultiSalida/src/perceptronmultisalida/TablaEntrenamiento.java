@@ -9,22 +9,34 @@ package perceptronmultisalida;
  *
  * @author Luis Fernando
  */
-public class TablaEntradas {
+public class TablaEntrenamiento {
     // <==={Atributos Basicos}===>
     private int nFilas; // Numero de Filas
     private int nX; // Numero de entradas xi
     private int nY; // Numero de neuronas yj
     
     // <==={Atributos Entrada}===>
-    private int tablaEntradas[][] = new int[nFilas][nX]; // Tabla de entradas xi
+    private int[][] tablaEntradas; // [nFilas][nX] - Tabla de entradas xi 
+    private int[][] tablaBias; // [nFilas][nY] - Tabla de entradas bias 
     
     // <==={Atributos Target}===>
-    private int tablaTarget[][] = new int[nFilas][nY]; // Tabla de entradas xi
+    private int[][] tablaTarget; // [nFilas][nY] - Tabla de entradas xi 
     
-    public TablaEntradas(int nEntradas, int nSalidas, int nFilas){
+    public TablaEntrenamiento(
+            int nEntradas,
+            int nSalidas,
+            int nFilas,
+            int[][] tablaEntradas,
+            int[][] tablaBias,
+            int[][] tablaTarget
+    ){
         this.nX = nEntradas;
         this.nY = nSalidas;
         this.nFilas = nFilas;
+        this.tablaEntradas = tablaEntradas;
+        this.tablaBias = tablaBias;
+        this.tablaTarget = tablaTarget;
+        
     }
 
     /**
@@ -81,6 +93,20 @@ public class TablaEntradas {
      */
     public void setTablaEntradas(int[][] tablaEntradas) {
         this.tablaEntradas = tablaEntradas;
+    }
+
+    /**
+     * @return the tablaBias
+     */
+    public int[][] getTablaBias() {
+        return tablaBias;
+    }
+
+    /**
+     * @param tablaBias the tablaBias to set
+     */
+    public void setTablaBias(int[][] tablaBias) {
+        this.tablaBias = tablaBias;
     }
 
     /**
