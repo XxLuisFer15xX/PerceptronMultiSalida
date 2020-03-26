@@ -90,8 +90,6 @@ public class testFuncion {
         Funcion funcion = new Funcion(bias, pesos_bias, pesos_xi, tabla_verdad, OUT, teta, cambio_pesos_xi, filas, yj, xi,columnas);
         
         funcion.funcion();
-         
-        
  
         
     }
