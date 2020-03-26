@@ -18,14 +18,6 @@ import java.util.Scanner;
  */
 public class Inicializar {
     
-<<<<<<< HEAD
-    public static void Inicializar(){
-        
-        
-    }
-    
-    public static boolean leerCsv(String nombreArchivo, ArrayList<ArrayList<Integer>> vectorEntrada, ArrayList<ArrayList<Integer>> vectorSalida, int nEntradas, int nSalidas){
-=======
     public static void InicializarTablaEntrenamiento(
             TablaEntrenamiento t,
             ArrayList<ArrayList<Integer>> vectorEntrada
@@ -111,7 +103,6 @@ public class Inicializar {
         
         
         int filas = 0;
->>>>>>> fd5867bccca310392247a7a6d10ab2502211e99f
         File file= new File(nombreArchivo);
 
         // this gives you a 2-dimensional array of strings
@@ -135,10 +126,7 @@ public class Inicializar {
 
         // the following code lets you iterate through the 2-dimensional array
         for(List<String> line: lines) {
-<<<<<<< HEAD
-=======
             filas++;
->>>>>>> fd5867bccca310392247a7a6d10ab2502211e99f
             int columnNo = 1;
             ArrayList<Integer> lineaEntrada = new ArrayList<>();            
             ArrayList<Integer> lineaSalida = new ArrayList<>();
@@ -156,18 +144,9 @@ public class Inicializar {
             }else{
                 vectorEntrada.clear();
                 vectorSalida.clear();
-<<<<<<< HEAD
-                return true;
-            }
-        }
-        System.out.println(vectorEntrada);
-        System.out.println(vectorSalida);
-        return false;
-=======
                 return -1;
             }
         }
         return filas;
->>>>>>> fd5867bccca310392247a7a6d10ab2502211e99f
     }
 }

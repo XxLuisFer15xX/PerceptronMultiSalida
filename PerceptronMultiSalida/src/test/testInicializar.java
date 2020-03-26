@@ -8,12 +8,8 @@ package test;
 import java.util.ArrayList;
 import java.util.Scanner;
 import perceptronmultisalida.Inicializar;
-<<<<<<< HEAD
-import perceptronmultisalida.TablaEntradas;
-=======
 import perceptronmultisalida.Perceptron;
 import perceptronmultisalida.TablaEntrenamiento;
->>>>>>> fd5867bccca310392247a7a6d10ab2502211e99f
 
 /**
  *
@@ -33,10 +29,7 @@ public class testInicializar {
         Scanner teclado = new Scanner(System.in);
         int numeroEntradas;
         int numeroSalidas;
-<<<<<<< HEAD
-=======
         int numeroFilas;
->>>>>>> fd5867bccca310392247a7a6d10ab2502211e99f
         int alfa;
         int teta;
         String nombreDocumento = "";
@@ -50,28 +43,6 @@ public class testInicializar {
         nombreDocumento = teclado.next();
         nombreDocumento += ".csv";
         
-<<<<<<< HEAD
-        boolean leerDocumento = Inicializar.leerCsv(nombreDocumento, vectorEntrada, vectorSalida, numeroEntradas, numeroSalidas);
-        if (leerDocumento){
-            System.out.println("Error al leer el documento, los datos no coinciden con las entras y salidas especificadas");
-        }
-        
-        System.out.println("");
-        System.out.println(vectorEntrada);
-        System.out.println(vectorSalida);
-        
-        
-        //TablaEntradas tabla_verdad = new TablaEntradas(,,);
-        
-        
-        
-        /*
-        System.out.println("Defina la taza de aprendisaje alfa");
-        alfa = teclado.nextInt();;
-        System.out.println("Defina el Umbral teta");
-        teta = teclado.nextInt();;
-        */
-=======
         numeroFilas = Inicializar.leerFilasCsv(nombreDocumento,
                 vectorEntrada,
                 vectorSalida,
@@ -137,7 +108,6 @@ public class testInicializar {
         System.out.println(perceptron1.getWbChange()[6][1]);
         System.out.println(perceptron1.getY_inj()[6][1]);
         System.out.println(perceptron1.getYj()[6][1]);
->>>>>>> fd5867bccca310392247a7a6d10ab2502211e99f
         
     }
 }
