@@ -40,13 +40,13 @@ public class Entrenamiento {
                     // Paso 5
                     if( t.getTablaTarget()[i][j] != p.getYj()[i][j] ){
                         if (i == 0 ){
-                            for ( int k = 0 ; k < nSalidas ; k++ ){
+                            for ( int k = 0 ; k < nEntradas ; k++ ){
                                 p.setW(  p.getW()[nFilas-1][k][j] + (alfa * t.getTablaTarget()[i][j] * t.getTablaEntradas()[i][k])  ,i,k,j);
                                 p.setWChange(  (alfa * t.getTablaTarget()[i][j] * t.getTablaEntradas()[i][k])  ,i,k,j);
                             }                            
                             p.setWb(  p.getWb()[nFilas-1][j] + (alfa * t.getTablaTarget()[i][j])  ,i,j);
                         }else{
-                            for ( int k = 0 ; k < nSalidas ; k++ ){
+                            for ( int k = 0 ; k < nEntradas ; k++ ){
                                 p.setW(  p.getW()[i-1][k][j] + (alfa * t.getTablaTarget()[i][j] * t.getTablaEntradas()[i][k])  ,i,k,j);
                                 p.setWChange(  (alfa * t.getTablaTarget()[i][j] * t.getTablaEntradas()[i][k])  ,i,k,j);
                             }
@@ -55,7 +55,7 @@ public class Entrenamiento {
                         p.setWbChange(  (alfa * t.getTablaTarget()[i][j])  ,i,j);
                     }else{
                         if (i == 0 ){
-                            for ( int k = 0 ; k < nSalidas ; k++ ){
+                            for ( int k = 0 ; k < nEntradas ; k++ ){
                                 p.setW(  p.getW()[nFilas-1][k][j]  ,i,k,j);
                                 p.setWChange(  0  ,i,k,j);
                                 contador++;
@@ -63,7 +63,7 @@ public class Entrenamiento {
                             p.setWb(  p.getWb()[nFilas-1][j]  ,i,j);
                             contador++;
                         }else{
-                            for ( int k = 0 ; k < nSalidas ; k++ ){
+                            for ( int k = 0 ; k < nEntradas ; k++ ){
                                 p.setW(  p.getW()[i-1][k][j]  ,i,k,j);
                                 p.setWChange(  0  ,i,k,j);
                                 contador++;

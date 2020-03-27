@@ -113,6 +113,19 @@ public class testInicializar {
         System.out.println(perceptron1.getYj()[6][1]);
         System.out.println("");
         
+        
+        Entrenamiento.Entrenar(
+                perceptron1,
+                tabla_verdad,
+                numeroFilas,
+                numeroEntradas,
+                numeroSalidas,
+                alfa,
+                teta
+        );
+        System.out.println();
+        
+        
         Resultado.MostrarTablaEntradas(tabla_verdad, numeroFilas, numeroEntradas);
         Resultado.MostrarTablaTarget(tabla_verdad, numeroFilas, numeroSalidas);
         Resultado.MostrarTablaBias(tabla_verdad, numeroFilas, numeroSalidas);
@@ -125,16 +138,8 @@ public class testInicializar {
         /*
         //Funcion.y_inj(perceptron1, tabla_verdad, numeroFilas, numeroEntradas, numeroSalidas, 0, 1);
         //Funcion.yj(perceptron1, numeroFilas, numeroSalidas, 0, 1, teta);
-        Entrenamiento.Entrenar(
-                perceptron1,
-                tabla_verdad,
-                numeroFilas,
-                numeroEntradas,
-                numeroSalidas,
-                alfa,
-                teta
-        );
-        System.out.println();
+        
+        
         */
         
         /*
