@@ -211,4 +211,38 @@ public class Perceptron {
     public void setYj(int[][] yj) {
         this.yj = yj;
     }
+
+    
+    
+    
+    // <====={Sobrecarga de Funciones}=====>
+    // Sobrecarga de la funcion setY_inj
+    public void setY_inj(int y_inj, int fila, int salida) {
+        this.y_inj[fila][salida] = y_inj;
+    }
+
+    // Sobrecarga de la funcion setYj
+    public void setYj(int yj, int fila, int salida) {
+        this.yj[fila][salida] = yj;
+    }
+    
+    // Sobrecarga de la funcion setW
+    public void setW(int w, int fila, int entrada, int salida) {
+        this.w[fila][entrada][salida] = w;
+    }
+    
+    // Sobrecarga de la funcion setWChange
+    public void setWChange(int wChange, int fila, int entrada, int salida) {
+        this.wChange[fila][entrada][salida] = wChange;
+    }
+    
+    // Sobrecarga de la funcion setWb
+    public void setWb(int wb, int fila, int salida) {
+        this.wb[fila][salida] = wb;
+    }
+    
+    // Sobrecarga de la funcion setWbChange
+    public void setWbChange(int wbChange, int fila, int salida) {
+        this.wbChange[fila][salida] = wbChange;
+    }
 }

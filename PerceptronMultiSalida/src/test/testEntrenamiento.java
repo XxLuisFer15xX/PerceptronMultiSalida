@@ -134,12 +134,5 @@ public class testEntrenamiento {
 	}
         
         
-        
-        Entrenamiento entrenamiento = new Entrenamiento(NET, bias, pesos_bias, pesos_xi, tabla_verdad, OUT, teta, target, alfa, cambio_pesos_bias, cambio_pesos_xi, filas, yj, xi);
-        
-        entrenamiento.entrenamiento();
-        
-       
-        
     }
 }

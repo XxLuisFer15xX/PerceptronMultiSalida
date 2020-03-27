@@ -6,6 +6,7 @@
 package perceptronmultisalida;
 
 import static java.lang.Math.pow;
+import java.util.Scanner;
 
 /**
  *
@@ -17,7 +18,7 @@ public class PerceptronMultiSalida {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        Scanner teclado = new Scanner(System.in); 
         boolean condicionParada = true;
        
         int respuesta = 2;
@@ -214,9 +215,8 @@ public class PerceptronMultiSalida {
 	            }
 	        }
 	    }
-		
 		System.out.println("Desea salir 1.Si 2.No");
-		System.out.println(respuesta);
+		respuesta = teclado.nextInt();
 		System.out.println("");
 		if (respuesta == 1){
 			condicionParada = false;
@@ -236,50 +236,50 @@ public class PerceptronMultiSalida {
         
         // Mostrar Tablas
 	for ( int i = 0 ; i < filas ; i++ ){
-	    System.out.println("f"+i+"  ");
+	    System.out.print("f"+i+"  ");
 	    for ( int j = 0 ; j < yj ; j++ ){
-	        System.out.println("y"+j+" ");
+	        System.out.print("y"+j+" ");
 	    }
 	    System.out.println();
-	    System.out.println("NET ");
+	    System.out.print("NET ");
 	    for ( int j = 0 ; j < yj ; j++ ){
-	        System.out.println(NET[i][j]+"  ");
+	        System.out.print(NET[i][j]+"  ");
 	    }
             System.out.println();
-	    System.out.println("OUT ") ;
+	    System.out.print("OUT ") ;
 	    for ( int j = 0 ; j < yj ; j++ ){
-	        System.out.println(OUT[i][j]+"  ");
+	        System.out.print(OUT[i][j]+"  ");
 	    }
             System.out.println();
-	    System.out.println("Tj: " );
+	    System.out.print("Tj: " );
 	    for ( int j = 0 ; j < yj ; j++ ){
-	        System.out.println(target[i][j] + "  ");
+	        System.out.print(target[i][j] + "  ");
 	    }
 	    System.out.println();
 	    System.out.println("Pesos:" );
 	    for ( int k = 0 ; k < xi ; k++ ){
-	        System.out.println("x" + k + ": ");
+	        System.out.print("x" + k + ": ");
 	        for ( int j = 0 ; j < yj ; j++ ){
-	            System.out.println( pesos_xi[i][k][j] + "  ");
+	            System.out.print( pesos_xi[i][k][j] + "  ");
 	        }
 	        System.out.println();
 	    }
-	    System.out.println("Bj: " );
+	    System.out.print("Bj: " );
 	    for ( int j = 0 ; j < yj ; j++ ){
-	        System.out.println(pesos_bias[i][j] + "  ");
+	        System.out.print(pesos_bias[i][j] + "  ");
 	    }
 	    System.out.println();
 	    System.out.println("Cambio Pesos:");
 	    for ( int k = 0 ; k < xi ; k++ ){
-	        System.out.println("x" + k + ": ");
+	        System.out.print("x" + k + ": ");
 	        for ( int j = 0 ; j < yj ; j++ ){
-	            System.out.println(cambio_pesos_xi[i][k][j] + "  ");
+	            System.out.print(cambio_pesos_xi[i][k][j] + "  ");
 	        }
 	        System.out.println();
 	    }
-	    System.out.println("Bj: " );
+	    System.out.print("Bj: " );
 	    for ( int j = 0 ; j < yj ; j++ ){
-	        System.out.println(cambio_pesos_bias[i][j] + "  ");
+	        System.out.print(cambio_pesos_bias[i][j] + "  ");
 	    }
 	    System.out.println();
             System.out.println();

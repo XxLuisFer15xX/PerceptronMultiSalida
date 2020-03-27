@@ -7,8 +7,11 @@ package test;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import perceptronmultisalida.Entrenamiento;
+import perceptronmultisalida.Funcion;
 import perceptronmultisalida.Inicializar;
 import perceptronmultisalida.Perceptron;
+import perceptronmultisalida.Resultado;
 import perceptronmultisalida.TablaEntrenamiento;
 
 /**
@@ -108,6 +111,52 @@ public class testInicializar {
         System.out.println(perceptron1.getWbChange()[6][1]);
         System.out.println(perceptron1.getY_inj()[6][1]);
         System.out.println(perceptron1.getYj()[6][1]);
+        System.out.println("");
         
+        Resultado.MostrarTablaEntradas(tabla_verdad, numeroFilas, numeroEntradas);
+        Resultado.MostrarTablaTarget(tabla_verdad, numeroFilas, numeroSalidas);
+        Resultado.MostrarTablaBias(tabla_verdad, numeroFilas, numeroSalidas);
+        System.out.println("");
+        Resultado.MostrarPerceptronAtributos(perceptron1);
+        Resultado.MostrarPerceptronWeight(perceptron1, numeroFilas, numeroEntradas, numeroSalidas);
+        Resultado.MostrarPerceptronWeightChange(perceptron1, numeroFilas, numeroEntradas, numeroSalidas);
+        Resultado.MostrarPerceptronFuncion(perceptron1, numeroFilas, numeroSalidas);
+        
+        /*
+        //Funcion.y_inj(perceptron1, tabla_verdad, numeroFilas, numeroEntradas, numeroSalidas, 0, 1);
+        //Funcion.yj(perceptron1, numeroFilas, numeroSalidas, 0, 1, teta);
+        Entrenamiento.Entrenar(
+                perceptron1,
+                tabla_verdad,
+                numeroFilas,
+                numeroEntradas,
+                numeroSalidas,
+                alfa,
+                teta
+        );
+        System.out.println();
+        */
+        
+        /*
+        // Mostrar Tablas
+	for ( int i = 0 ; i < numeroFilas ; i++ ){
+	    System.out.print("f"+i+"  ");
+	    for ( int j = 0 ; j < numeroSalidas ; j++ ){
+	        System.out.print("y"+j+" ");
+	    }
+	    System.out.println();
+	    System.out.println("Pesos:" );
+	    for ( int k = 0 ; k < numeroEntradas ; k++ ){
+	        System.out.print("x" + k + ": ");
+	        for ( int j = 0 ; j < numeroSalidas ; j++ ){
+	            System.out.print( perceptron1.getW()[i][k][j] + "  ");
+	        }
+	        System.out.println();
+	    }
+	    
+	    System.out.println();
+            System.out.println();
+	}
+        */
     }
 }

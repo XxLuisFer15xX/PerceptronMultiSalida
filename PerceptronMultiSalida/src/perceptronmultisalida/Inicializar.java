@@ -127,10 +127,12 @@ public class Inicializar {
         // the following code lets you iterate through the 2-dimensional array
         for(List<String> line: lines) {
             filas++;
+            System.out.print(filas + ":");
             int columnNo = 1;
             ArrayList<Integer> lineaEntrada = new ArrayList<>();            
             ArrayList<Integer> lineaSalida = new ArrayList<>();
             for (String value: line) {
+                System.out.print("\t" + Integer.parseInt(value));
                 if(columnNo <= nEntradas){
                     lineaEntrada.add(Integer.parseInt(value));
                 } else{
@@ -138,6 +140,7 @@ public class Inicializar {
                 }
                 columnNo++;
             }
+            System.out.println("");
             if (columnNo-1 == (nEntradas + nSalidas)){
                 vectorEntrada.add(lineaEntrada);
                 vectorSalida.add(lineaSalida);
