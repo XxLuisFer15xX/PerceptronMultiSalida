@@ -285,8 +285,8 @@ public class PerceptronMultiSalida {
             System.out.println();
 	}
         
-        // Prueba de los pesos
-	int Y_inj = 0;
+    // Prueba de los pesos
+    int Y_inj = 0;
     int Yj = 0;
     
     System.out.println();
@@ -299,31 +299,31 @@ public class PerceptronMultiSalida {
         for ( int i = 0 ; i < filas ; i++ ){
             
             Y_inj = bias[i][j] * pesos_bias[i][j];
-            System.out.println("Y_in" + j+1 + " = "
+            System.out.print("Y_in" + j+1 + " = "
             + "(" + bias[i][j] + ")"
             + "(" + pesos_bias[i][j] + ")"
             + " + [") ;
             
             Y_inj += tabla_verdad[i][0] * pesos_xi[i][0][j];
-            System.out.println(" (" + tabla_verdad[i][0] + ")"
+            System.out.print(" (" + tabla_verdad[i][0] + ")"
             + "(" + pesos_xi[i][0][j] + ")");
             for ( int k = 1 ; k < xi ; k++ ){
                 Y_inj += tabla_verdad[i][k] * pesos_xi[i][k][j];
-                System.out.println(" + (" + tabla_verdad[i][k] + ")"
+                System.out.print(" + (" + tabla_verdad[i][k] + ")"
                 + "(" + pesos_xi[i][k][j] + ")");
             }
-            System.out.println(" ] = " + Y_inj);
+            System.out.print(" ] = " + Y_inj);
             
             
-            System.out.println( "\t\t " + "t" + j+1 + " = ");
+            System.out.print( "\t\t " + "t" + j+1 + " = ");
             if (Y_inj > teta){
-	            Yj = 1;
+	        Yj = 1;
             } else if (   (-1)*teta <= Y_inj   &&   Y_inj <= teta   ){
                 Yj = 0;
             }else if ( Y_inj < (-1)*teta ){
                 Yj = -1;
             }
-            System.out.println(Yj);
+            System.out.print(Yj);
             System.out.println();
             System.out.println();
         }

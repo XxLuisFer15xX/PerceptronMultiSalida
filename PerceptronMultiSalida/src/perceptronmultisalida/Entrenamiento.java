@@ -12,6 +12,9 @@ import java.util.Scanner;
  * @author Luis Fernando
  */
 public class Entrenamiento {
+    private int epocas;
+    private int tasaAcriertos;
+    private int tasaFallos;
     
     public static void Entrenar(
             Perceptron p,
@@ -27,11 +30,19 @@ public class Entrenamiento {
         Scanner teclado = new Scanner(System.in);
         // Paso 1
         // Perceptron Simple
+        
+        int aciertos = 0;
+        int epocas = 0;
+        double tazaAciertos = 0;
+        double tazaFallos = 0;
+        boolean cambios = false;
         while (condicionParada){
-            int contador = 0;	    
+            int contador = 0;
+            epocas++;
             // Paso 2
             // Asignar Pesos
             for ( int i = 0 ; i < nFilas ; i++ ){
+                cambios = false;
                 for ( int j = 0 ; j < nSalidas ; j++ ){
                     // Paso 4
                     Funcion.y_inj(p, t, nFilas, nEntradas, nSalidas, i, j);
@@ -39,6 +50,7 @@ public class Entrenamiento {
                     
                     // Paso 5
                     if( t.getTablaTarget()[i][j] != p.getYj()[i][j] ){
+                        cambios = true;
                         if (i == 0 ){
                             for ( int k = 0 ; k < nEntradas ; k++ ){
                                 p.setW(  p.getW()[nFilas-1][k][j] + (alfa * t.getTablaTarget()[i][j] * t.getTablaEntradas()[i][k])  ,i,k,j);
@@ -74,23 +86,23 @@ public class Entrenamiento {
                         p.setWbChange(  0  ,i,j);
                     }
                 }
+                if (!cambios){
+                    aciertos++;
+                }
             }
-            System.out.println("Desea salir 1.Si 2.No");
-            respuesta = teclado.nextInt();
-            System.out.println("");
-            if (respuesta == 1){
-                condicionParada = false;
-            }
-            System.out.println("");
-            System.out.println(contador+" "+"/");
-            System.out.println(nFilas * ((nEntradas*nSalidas) + nSalidas));
+            
             if ( (  nFilas * ((nEntradas*nSalidas) + nSalidas)  ) == contador ){
-                System.out.println("No hay cambios");
                 condicionParada = false;
-            }else{
-                System.out.println("Si hay cambios");
             }
-            System.out.println(""); 
-        }        
+            System.out.println("");
+        }
+        tazaAciertos = ( (double) aciertos / (epocas * nFilas) )*100;
+        tazaFallos = ( (double)((epocas * nFilas) - aciertos) / (epocas * nFilas) )*100;
+        System.out.println("<===== {Informacion del Entrenamiento} =====>");
+        System.out.println("Epocas:" + epocas);
+        System.out.println("Total de Oruebas:" + (epocas * nFilas) );
+        System.out.println("Taza de Aciertos:" + tazaAciertos + "");
+        System.out.println("Taza de Fallos:" + tazaFallos );
+        System.out.println("");
     }
 }

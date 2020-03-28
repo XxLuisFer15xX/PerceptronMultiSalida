@@ -7,7 +7,7 @@ package perceptronmultisalida;
 
 /**
  *
- * @author Luis Fernando
+ * 
  */
 public class Funcion {
     // Funcion Activacion
@@ -57,5 +57,49 @@ public class Funcion {
             out = -1;
         }
         p.setYj(out, fila, salida);
+    }
+    
+    public static void Ejecutar(
+        Perceptron p,
+        TablaEntrenamiento t,
+        int teta
+    ){
+        // Prueba de los pesos
+        int Y_inj = 0;
+        int Yj = 0;
+        System.out.println("Y_inj = (bj) + Sumatoria(xi*wij)");
+        for ( int j = 0 ; j < p.getnY() ; j++ ){
+            // Encabezado
+            System.out.println();
+            System.out.println("Y_in" + (j+1) + " = (b" + j+1 + ") + Sumatoria(xi*wi" + j+1 + ")\t\t\t\tt"+ j+1);    
+            for ( int i = 0 ; i < p.getnFilas() ; i++ ){
+                Y_inj = t.getTablaBias()[i][j] * p.getWb()[i][j];
+                System.out.print("Y_in" + (j+1) + " = "
+                + "(" + t.getTablaBias()[i][j] + ")"
+                + "(" + p.getWb()[i][j] + ")"
+                + " + [") ;
+
+                Y_inj += t.getTablaEntradas()[i][0] * p.getW()[i][0][j];
+                System.out.print(" (" + t.getTablaEntradas()[i][0] + ")"
+                + "(" + p.getW()[i][0][j] + ")");
+                for ( int k = 1 ; k < p.getnX() ; k++ ){
+                    Y_inj += t.getTablaEntradas()[i][k] * p.getW()[i][k][j];
+                    System.out.print(" + (" + t.getTablaEntradas()[i][k] + ")"
+                    + "(" + p.getW()[i][k][j] + ")");
+                }
+                System.out.print(" ] = " + Y_inj);
+                
+                System.out.print( "\t\t " + "t" + (j+1) + " = ");
+                if (Y_inj > teta){
+                    Yj = 1;
+                } else if (   (-1)*teta <= Y_inj   &&   Y_inj <= teta   ){
+                    Yj = 0;
+                }else if ( Y_inj < (-1)*teta ){
+                    Yj = -1;
+                }
+                System.out.println(Yj);
+            }
+            System.out.println();
+        }
     }
 }

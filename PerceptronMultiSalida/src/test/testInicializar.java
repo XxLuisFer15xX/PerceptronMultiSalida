@@ -62,15 +62,6 @@ public class testInicializar {
         teta = teclado.nextInt();;
         
         
-        
-        System.out.println("");
-        System.out.println(vectorEntrada);
-        System.out.println(vectorSalida);
-        System.out.println("Filas " + numeroFilas);        
-        System.out.println("\n");
-        
-        
-        
         // Instancia Tabla_Verdad
         TablaEntrenamiento tabla_verdad = new TablaEntrenamiento(
                 numeroEntradas,
@@ -96,22 +87,9 @@ public class testInicializar {
                 new int[numeroFilas][numeroSalidas]
         );
         
-        System.out.println("Inicializar Tabla_Verdad");
-        Inicializar.InicializarTablaEntrenamiento(tabla_verdad, vectorEntrada, vectorSalida);
-        System.out.println(tabla_verdad.getTablaEntradas()[6][1]);
-        System.out.println(tabla_verdad.getTablaTarget()[6][0]);
-        System.out.println(tabla_verdad.getTablaBias()[6][0]);
-        System.out.println("");
         
-        System.out.println("Inicializar Perceptron");
+        Inicializar.InicializarTablaEntrenamiento(tabla_verdad, vectorEntrada, vectorSalida);
         Inicializar.InicializarPerceptron(perceptron1);
-        System.out.println(perceptron1.getW()[6][2][1]);
-        System.out.println(perceptron1.getWb()[6][1]);
-        System.out.println(perceptron1.getWChange()[6][2][1]);
-        System.out.println(perceptron1.getWbChange()[6][1]);
-        System.out.println(perceptron1.getY_inj()[6][1]);
-        System.out.println(perceptron1.getYj()[6][1]);
-        System.out.println("");
         
         
         Entrenamiento.Entrenar(
@@ -123,45 +101,25 @@ public class testInicializar {
                 alfa,
                 teta
         );
-        System.out.println();
         
+        System.out.println("<===== {Informacion Basica del Perceptron} =====>");
+        Resultado.MostrarPerceptronAtributos(perceptron1);
         
+        System.out.println("<===== {Informacion de las Entradas} =====>");
         Resultado.MostrarTablaEntradas(tabla_verdad, numeroFilas, numeroEntradas);
         Resultado.MostrarTablaTarget(tabla_verdad, numeroFilas, numeroSalidas);
         Resultado.MostrarTablaBias(tabla_verdad, numeroFilas, numeroSalidas);
         System.out.println("");
-        Resultado.MostrarPerceptronAtributos(perceptron1);
+        
+        System.out.println("<===== {Informacion de los Pesos} =====>");
         Resultado.MostrarPerceptronWeight(perceptron1, numeroFilas, numeroEntradas, numeroSalidas);
         Resultado.MostrarPerceptronWeightChange(perceptron1, numeroFilas, numeroEntradas, numeroSalidas);
+        
+        System.out.println("<===== {Informacion de la Funcion de Activacion} =====>");
         Resultado.MostrarPerceptronFuncion(perceptron1, numeroFilas, numeroSalidas);
         
-        /*
-        //Funcion.y_inj(perceptron1, tabla_verdad, numeroFilas, numeroEntradas, numeroSalidas, 0, 1);
-        //Funcion.yj(perceptron1, numeroFilas, numeroSalidas, 0, 1, teta);
-        
-        
-        */
-        
-        /*
-        // Mostrar Tablas
-	for ( int i = 0 ; i < numeroFilas ; i++ ){
-	    System.out.print("f"+i+"  ");
-	    for ( int j = 0 ; j < numeroSalidas ; j++ ){
-	        System.out.print("y"+j+" ");
-	    }
-	    System.out.println();
-	    System.out.println("Pesos:" );
-	    for ( int k = 0 ; k < numeroEntradas ; k++ ){
-	        System.out.print("x" + k + ": ");
-	        for ( int j = 0 ; j < numeroSalidas ; j++ ){
-	            System.out.print( perceptron1.getW()[i][k][j] + "  ");
-	        }
-	        System.out.println();
-	    }
-	    
-	    System.out.println();
-            System.out.println();
-	}
-        */
+        System.out.println("");
+        System.out.println("<===== {Ejecución del Perceptron} =====>");
+        Funcion.Ejecutar(perceptron1, tabla_verdad, teta);
     }
 }
