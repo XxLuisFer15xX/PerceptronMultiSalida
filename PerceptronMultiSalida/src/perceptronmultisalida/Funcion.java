@@ -102,4 +102,13 @@ public class Funcion {
             System.out.println();
         }
     }
+    
+    
+    public static String EjecutarAprendisaje(
+        Perceptron p,
+        TablaEntrenamiento t,
+        int[] entradas
+    ){
+        return "";
+    }
 }
