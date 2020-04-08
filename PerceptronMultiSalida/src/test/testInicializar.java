@@ -25,11 +25,6 @@ public class testInicializar {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ArrayList<ArrayList<Integer>> vectorEntrada = new ArrayList<>();
-        ArrayList<ArrayList<Integer>> vectorSalida = new ArrayList<>();
-        
-        
-        
         Scanner teclado = new Scanner(System.in);
         int numeroEntradas;
         int numeroSalidas;
@@ -46,6 +41,14 @@ public class testInicializar {
         System.out.println("Especifique el nombre del documento que contiene las entradas");
         nombreDocumento = teclado.next();
         nombreDocumento += ".csv";
+        
+        
+        
+        
+        
+        
+        ArrayList<ArrayList<Integer>> vectorEntrada = new ArrayList<>();
+        ArrayList<ArrayList<Integer>> vectorSalida = new ArrayList<>();
         
         numeroFilas = Inicializar.leerFilasCsv(nombreDocumento,
                 vectorEntrada,
