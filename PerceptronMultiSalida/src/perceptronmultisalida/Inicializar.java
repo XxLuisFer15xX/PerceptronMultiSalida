@@ -5,9 +5,10 @@
  */
 package perceptronmultisalida;
 
+
+
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -150,7 +151,7 @@ public class Inicializar {
         }
         return filas;
     }
-
+/*
     public static void DigitalizarCSV(String[] Datos, String nombreArchivo){
         String salidaArchivo = nombreArchivo;
         boolean existe= new File(salidaArchivo).exists();
@@ -161,7 +162,8 @@ public class Inicializar {
         }
 
         try{
-            Cswriter salidaCSV = new CsvWriter (new FileWriter(salidaArchivo, true), ',');
+            CSVReader salidaCSV = new CSVWriter(new FileWriter(salidaArchivo, true), ',');
+            
             
             for(String data: Datos){
                 salidaCSV.write(data);
@@ -174,4 +176,5 @@ public class Inicializar {
             e.printStackTrace();
         }
     }
+*/
 }

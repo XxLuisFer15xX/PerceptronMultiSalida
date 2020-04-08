@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import perceptronmultisalida.Entrenamiento;
 import perceptronmultisalida.Funcion;
-import perceptronmultisalida.Globals;
+import ClasesAdicionales.Globals;
 import perceptronmultisalida.Inicializar;
 import perceptronmultisalida.Perceptron;
 import perceptronmultisalida.Resultado;
