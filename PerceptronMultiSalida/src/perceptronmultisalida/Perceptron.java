@@ -13,9 +13,6 @@ public class Perceptron {
     // <==={Atributos Basicos}===>
     private int alfa; // Taza de Aprendisaje
     private int teta;  // Umbral
-    private int nX; // Numero de Entradas xi
-    private int nY; // Nmero de Neuronas yj
-    private int nFilas; // Lineas de Datos
     
     // <==={Atributos Pesos}===>
     private int w[][][]; // [nFilas][nX][nY] - Pesos xi 
@@ -33,9 +30,6 @@ public class Perceptron {
     public Perceptron(
             int alfa,
             int teta,
-            int nEntradas,
-            int nSalidas,
-            int nFilas,
             
             int w[][][],
             int wb[][],
@@ -46,9 +40,6 @@ public class Perceptron {
     ){
         this.alfa = alfa;
         this.teta = teta;
-        this.nX = nEntradas;
-        this.nY = nSalidas;
-        this.nFilas = nFilas;
         
         this.w = w;
         this.wb = wb;
@@ -84,48 +75,6 @@ public class Perceptron {
      */
     public void setTeta(int teta) {
         this.teta = teta;
-    }
-
-    /**
-     * @return the nX
-     */
-    public int getnX() {
-        return nX;
-    }
-
-    /**
-     * @param nX the nX to set
-     */
-    public void setnX(int nX) {
-        this.nX = nX;
-    }
-
-    /**
-     * @return the nY
-     */
-    public int getnY() {
-        return nY;
-    }
-
-    /**
-     * @param nY the nY to set
-     */
-    public void setnY(int nY) {
-        this.nY = nY;
-    }
-
-    /**
-     * @return the nFilas
-     */
-    public int getnFilas() {
-        return nFilas;
-    }
-
-    /**
-     * @param nFilas the nFilas to set
-     */
-    public void setnFilas(int nFilas) {
-        this.nFilas = nFilas;
     }
 
     /**

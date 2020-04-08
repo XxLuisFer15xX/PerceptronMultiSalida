@@ -54,16 +54,16 @@ public class Inicializar {
     }
     
     
-    public static void InicializarPerceptron(Perceptron p){
+    public static void InicializarPerceptron(Perceptron p, TablaEntrenamiento t){
         
         // Inicializar atributos del perceptron
-        int net[][] = new int[p.getnFilas()][p.getnY()];
-        int out[][] = new int[p.getnFilas()][p.getnY()];
-        int pesos_bias[][] = new int[p.getnFilas()][p.getnY()];
-        int cambio_pesos_bias[][] = new int[p.getnFilas()][p.getnY()];
+        int net[][] = new int[t.getnFilas()][t.getnY()];
+        int out[][] = new int[t.getnFilas()][t.getnY()];
+        int pesos_bias[][] = new int[t.getnFilas()][t.getnY()];
+        int cambio_pesos_bias[][] = new int[t.getnFilas()][t.getnY()];
         
-        for ( int i = 0 ; i < p.getnFilas() ; i++ ){
-	    for ( int j = 0 ; j < p.getnY() ; j++ ){
+        for ( int i = 0 ; i < t.getnFilas() ; i++ ){
+	    for ( int j = 0 ; j < t.getnY() ; j++ ){
                 net[i][j] = 0;
                 out[i][j] = 0;
                 pesos_bias[i][j] = 0;
@@ -76,11 +76,11 @@ public class Inicializar {
         p.setWbChange(cambio_pesos_bias);
         
         // Inicializar Atributos Pesos
-        int pesos_xi[][][] = new int[p.getnFilas()][p.getnX()][p.getnY()];
-        int cambio_pesos_xi[][][] = new int[p.getnFilas()][p.getnX()][p.getnY()];
-        for ( int i = 0 ; i < p.getnFilas() ; i++ ){
-	    for ( int k = 0 ; k < p.getnX() ; k++ ){
-                for ( int j = 0 ; j < p.getnY() ; j++ ){
+        int pesos_xi[][][] = new int[t.getnFilas()][t.getnX()][t.getnY()];
+        int cambio_pesos_xi[][][] = new int[t.getnFilas()][t.getnX()][t.getnY()];
+        for ( int i = 0 ; i < t.getnFilas() ; i++ ){
+	    for ( int k = 0 ; k < t.getnX() ; k++ ){
+                for ( int j = 0 ; j < t.getnY() ; j++ ){
                     pesos_xi[i][k][j] = 0;
                     cambio_pesos_xi[i][k][j] = 0;
                 }

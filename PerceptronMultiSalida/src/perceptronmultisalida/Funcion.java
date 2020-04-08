@@ -15,12 +15,12 @@ public class Funcion {
     public static void y_inj(
             Perceptron p,
             TablaEntrenamiento t,
-            int nFilas,
-            int nEntradas,
-            int nSalidas,
             int fila,
             int salida
     ){
+        int nFilas = t.getnFilas();
+        int nEntradas = t.getnX();
+        int nSalidas = t.getnY();
         int net = 0;
         if (fila == 0){
             net = p.getWb()[nFilas-1][salida] * t.getTablaBias()[fila][salida];
@@ -40,13 +40,13 @@ public class Funcion {
     // <====={Funcion para yj}=====>
     public static void yj(
             Perceptron p,
-            int nFilas,
-            int nSalidas,
+            TablaEntrenamiento t,
             int fila,
             int salida,
             int teta
     ){
-        
+        int nFilas = t.getnFilas();
+        int nSalidas = t.getnY();
         int net = p.getY_inj()[fila][salida];
         int out = 0;
         if (net > teta){
@@ -68,11 +68,11 @@ public class Funcion {
         int Y_inj = 0;
         int Yj = 0;
         System.out.println("Y_inj = (bj) + Sumatoria(xi*wij)");
-        for ( int j = 0 ; j < p.getnY() ; j++ ){
+        for ( int j = 0 ; j < t.getnY() ; j++ ){
             // Encabezado
             System.out.println();
             System.out.println("Y_in" + (j+1) + " = (b" + j+1 + ") + Sumatoria(xi*wi" + j+1 + ")\t\t\t\tt"+ j+1);    
-            for ( int i = 0 ; i < p.getnFilas() ; i++ ){
+            for ( int i = 0 ; i < t.getnFilas() ; i++ ){
                 Y_inj = t.getTablaBias()[i][j] * p.getWb()[i][j];
                 System.out.print("Y_in" + (j+1) + " = "
                 + "(" + t.getTablaBias()[i][j] + ")"
@@ -82,7 +82,7 @@ public class Funcion {
                 Y_inj += t.getTablaEntradas()[i][0] * p.getW()[i][0][j];
                 System.out.print(" (" + t.getTablaEntradas()[i][0] + ")"
                 + "(" + p.getW()[i][0][j] + ")");
-                for ( int k = 1 ; k < p.getnX() ; k++ ){
+                for ( int k = 1 ; k < t.getnX() ; k++ ){
                     Y_inj += t.getTablaEntradas()[i][k] * p.getW()[i][k][j];
                     System.out.print(" + (" + t.getTablaEntradas()[i][k] + ")"
                     + "(" + p.getW()[i][k][j] + ")");

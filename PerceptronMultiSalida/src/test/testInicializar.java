@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import perceptronmultisalida.Entrenamiento;
 import perceptronmultisalida.Funcion;
+import perceptronmultisalida.Globals;
 import perceptronmultisalida.Inicializar;
 import perceptronmultisalida.Perceptron;
 import perceptronmultisalida.Resultado;
@@ -63,7 +64,7 @@ public class testInicializar {
         
         
         // Instancia Tabla_Verdad
-        TablaEntrenamiento tabla_verdad = new TablaEntrenamiento(
+        Globals.tabla_verdad = new TablaEntrenamiento(
                 numeroEntradas,
                 numeroSalidas,
                 numeroFilas,
@@ -73,12 +74,9 @@ public class testInicializar {
         );
         
         // Instancia Perceptron
-        Perceptron perceptron1 = new Perceptron(
+        Globals.perceptron = new Perceptron(
                 alfa,
                 teta,
-                numeroEntradas,
-                numeroSalidas,
-                numeroFilas,
                 new int[numeroFilas][numeroEntradas][numeroSalidas],
                 new int[numeroFilas][numeroSalidas],
                 new int[numeroFilas][numeroEntradas][numeroSalidas],
@@ -88,38 +86,54 @@ public class testInicializar {
         );
         
         
-        Inicializar.InicializarTablaEntrenamiento(tabla_verdad, vectorEntrada, vectorSalida);
-        Inicializar.InicializarPerceptron(perceptron1);
+        Inicializar.InicializarTablaEntrenamiento(Globals.tabla_verdad, vectorEntrada, vectorSalida);
+        Inicializar.InicializarPerceptron(Globals.perceptron, Globals.tabla_verdad);
+        
+        
+        
+        
+        
+        
         
         
         Entrenamiento.Entrenar(
-                perceptron1,
-                tabla_verdad,
-                numeroFilas,
-                numeroEntradas,
-                numeroSalidas,
+                Globals.perceptron,
+                Globals.tabla_verdad,
                 alfa,
                 teta
         );
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         System.out.println("<===== {Informacion Basica del Perceptron} =====>");
-        Resultado.MostrarPerceptronAtributos(perceptron1);
+        Resultado.MostrarPerceptronAtributos(Globals.perceptron, Globals.tabla_verdad);
         
         System.out.println("<===== {Informacion de las Entradas} =====>");
-        Resultado.MostrarTablaEntradas(tabla_verdad, numeroFilas, numeroEntradas);
-        Resultado.MostrarTablaTarget(tabla_verdad, numeroFilas, numeroSalidas);
-        Resultado.MostrarTablaBias(tabla_verdad, numeroFilas, numeroSalidas);
+        Resultado.MostrarTablaEntradas(Globals.tabla_verdad);
+        Resultado.MostrarTablaTarget(Globals.tabla_verdad);
+        Resultado.MostrarTablaBias(Globals.tabla_verdad);
         System.out.println("");
         
         System.out.println("<===== {Informacion de los Pesos} =====>");
-        Resultado.MostrarPerceptronWeight(perceptron1, numeroFilas, numeroEntradas, numeroSalidas);
-        Resultado.MostrarPerceptronWeightChange(perceptron1, numeroFilas, numeroEntradas, numeroSalidas);
+        Resultado.MostrarPerceptronWeight(Globals.perceptron, Globals.tabla_verdad);
+        Resultado.MostrarPerceptronWeightChange(Globals.perceptron, Globals.tabla_verdad);
         
         System.out.println("<===== {Informacion de la Funcion de Activacion} =====>");
-        Resultado.MostrarPerceptronFuncion(perceptron1, numeroFilas, numeroSalidas);
+        Resultado.MostrarPerceptronFuncion(Globals.perceptron, Globals.tabla_verdad);
         
         System.out.println("");
         System.out.println("<===== {Ejecución del Perceptron} =====>");
-        Funcion.Ejecutar(perceptron1, tabla_verdad, teta);
+        Funcion.Ejecutar(Globals.perceptron, Globals.tabla_verdad, teta);
     }
 }

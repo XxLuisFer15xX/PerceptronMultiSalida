@@ -19,12 +19,12 @@ public class Entrenamiento {
     public static void Entrenar(
             Perceptron p,
             TablaEntrenamiento t,
-            int nFilas,
-            int nEntradas,
-            int nSalidas,
             int alfa,
             int teta
     ){
+        int nFilas = t.getnFilas();
+        int nEntradas = t.getnX();
+        int nSalidas = t.getnY();
         boolean condicionParada = true;
         int respuesta = 2;
         Scanner teclado = new Scanner(System.in);
@@ -45,8 +45,8 @@ public class Entrenamiento {
                 cambios = false;
                 for ( int j = 0 ; j < nSalidas ; j++ ){
                     // Paso 4
-                    Funcion.y_inj(p, t, nFilas, nEntradas, nSalidas, i, j);
-                    Funcion.yj(p, nFilas, nSalidas, i, j, teta);
+                    Funcion.y_inj(p, t, i, j);
+                    Funcion.yj(p, t, i, j, teta);
                     
                     // Paso 5
                     if( t.getTablaTarget()[i][j] != p.getYj()[i][j] ){
