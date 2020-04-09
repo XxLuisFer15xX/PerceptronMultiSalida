@@ -40,17 +40,18 @@ public class testInicializar {
         numeroSalidas = teclado.nextInt();;
         System.out.println("Especifique el nombre del documento que contiene las entradas");
         nombreDocumento = teclado.next();
-        nombreDocumento += ".csv";
         
         
         
         
         
         
+        // <=== {Inicializar} ===>
         ArrayList<ArrayList<Integer>> vectorEntrada = new ArrayList<>();
         ArrayList<ArrayList<Integer>> vectorSalida = new ArrayList<>();
         
-        numeroFilas = Inicializar.leerFilasCsv(nombreDocumento,
+        numeroFilas = Inicializar.leerFilasCsv(
+                nombreDocumento,
                 vectorEntrada,
                 vectorSalida,
                 numeroEntradas,
@@ -98,7 +99,7 @@ public class testInicializar {
         
         
         
-        
+        // <=== {Entrenar} ===>
         Entrenamiento.Entrenar(
                 Globals.perceptron,
                 Globals.tabla_verdad,
