@@ -6,11 +6,19 @@
 package Formularios;
 
 import ClasesAdicionales.AdminArchivos;
+import ClasesAdicionales.Globals;
+import test.testInicializar;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import perceptronmultisalida.Entrenamiento;
+import perceptronmultisalida.Inicializar;
+import perceptronmultisalida.Perceptron;
+import perceptronmultisalida.TablaEntrenamiento;
 
 /**
  *
@@ -872,6 +880,86 @@ public class Principal extends javax.swing.JFrame {
 
     private void btnEntrenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrenarActionPerformed
         // TODO add your handling code here:
+        contadorL++;
+
+                
+  Scanner teclado = new Scanner(System.in);
+     
+        int alfa = 1;
+        int teta =0;
+        
+        String nombreDocumento = "";
+        nEntradas = teclado.nextInt();
+        nSalidas = teclado.nextInt();
+         nLineas = teclado.nextInt();
+        nombreDocumento = teclado.next();
+     
+        // <=== {Inicializar} ===>
+        ArrayList<ArrayList<Integer>> vectorEntrada = new ArrayList<>();
+        ArrayList<ArrayList<Integer>> vectorSalida = new ArrayList<>();
+        
+        nLineas = Inicializar.leerFilasCsv(
+                nombreDocumento,
+                vectorEntrada,
+                vectorSalida,
+                nEntradas,
+                nSalidas
+        );
+        if (nLineas == -1){
+         JOptionPane.showMessageDialog(this, "Error al leer el documento, los datos no coinciden con las entras y salidas especificadas", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+        }
+        
+     
+        alfa = teclado.nextInt();
+       
+        teta = teclado.nextInt();
+        
+        
+        // Instancia Tabla_Verdad
+        Globals.tabla_verdad = new TablaEntrenamiento(
+                nEntradas,
+                nSalidas,
+                nLineas,
+                new int[nLineas][nEntradas],
+                new int[nLineas][nSalidas],
+                new int[nLineas][nSalidas]
+        );
+        
+        // Instancia Perceptron
+        Globals.perceptron = new Perceptron(
+                alfa,
+                teta,
+                new int[nLineas][nEntradas][nSalidas],
+                new int[nLineas][nSalidas],
+                new int[nLineas][nEntradas][nSalidas],
+                new int[nLineas][nSalidas],
+                new int[nLineas][nSalidas],
+                new int[nLineas][nSalidas]
+        );
+        
+        
+        Inicializar.InicializarTablaEntrenamiento(Globals.tabla_verdad, vectorEntrada, vectorSalida);
+        Inicializar.InicializarPerceptron(Globals.perceptron, Globals.tabla_verdad);
+
+        
+        // <=== {Entrenar} ===>
+        Entrenamiento.Entrenar(
+                Globals.perceptron,
+                Globals.tabla_verdad,
+                alfa,
+                teta
+        );
+      
+       
+        if (contadorL == nLineas){
+            btnDigitalizar.setEnabled(false);
+            btnLimpiar.setEnabled(false);
+            for(JButton boton: b){
+                boton.setEnabled(false);
+            }
+            
+         
+        }
     }//GEN-LAST:event_btnEntrenarActionPerformed
 
     private void btnDigitalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDigitalizarActionPerformed
