@@ -764,6 +764,81 @@ public class Aprendisaje extends javax.swing.JFrame {
         }
         
         jTextField4.setText("");
+        
+        
+        
+        		jButton5.setBackground(Color.white);
+        jButton6.setBackground(Color.white);
+        jButton7.setBackground(Color.white);
+        jButton8.setBackground(Color.white);
+        jButton9.setBackground(Color.white);
+        jButton10.setBackground(Color.white);
+        jButton11.setBackground(Color.white);
+        jButton12.setBackground(Color.white);
+        jButton13.setBackground(Color.white);
+        jButton14.setBackground(Color.white);
+        jButton15.setBackground(Color.white);
+        jButton16.setBackground(Color.white);
+        jButton17.setBackground(Color.white);
+        jButton18.setBackground(Color.white);
+        jButton19.setBackground(Color.white);
+        jButton20.setBackground(Color.white);
+        jButton21.setBackground(Color.white);
+        jButton22.setBackground(Color.white);
+        jButton23.setBackground(Color.white);
+        jButton24.setBackground(Color.white);
+        jButton25.setBackground(Color.white);
+        jButton26.setBackground(Color.white);
+        jButton27.setBackground(Color.white);
+        jButton28.setBackground(Color.white);
+        jButton29.setBackground(Color.white);
+        jButton30.setBackground(Color.white);
+        jButton31.setBackground(Color.white);
+        jButton32.setBackground(Color.white);
+        jButton47.setBackground(Color.white);
+        jButton48.setBackground(Color.white);
+        jButton49.setBackground(Color.white);
+        jButton50.setBackground(Color.white);
+        jButton51.setBackground(Color.white);
+        jButton52.setBackground(Color.white);
+        jButton53.setBackground(Color.white);
+        jButton54.setBackground(Color.white);
+        jButton55.setBackground(Color.white);
+        jButton56.setBackground(Color.white);
+        jButton57.setBackground(Color.white);
+        jButton58.setBackground(Color.white);
+        jButton59.setBackground(Color.white);
+        jButton60.setBackground(Color.white);
+        jButton61.setBackground(Color.white);
+        jButton62.setBackground(Color.white);
+        jButton63.setBackground(Color.white);
+        jButton64.setBackground(Color.white);
+        jButton65.setBackground(Color.white);
+        jButton66.setBackground(Color.white);
+        jButton67.setBackground(Color.white);
+        jButton68.setBackground(Color.white);
+        jButton69.setBackground(Color.white);
+        jButton70.setBackground(Color.white);
+        jButton71.setBackground(Color.white);
+        jButton72.setBackground(Color.white);
+        jButton73.setBackground(Color.white);
+        jButton74.setBackground(Color.white);
+        jButton75.setBackground(Color.white);
+        jButton76.setBackground(Color.white);
+        jButton77.setBackground(Color.white);
+        jButton78.setBackground(Color.white);
+        jButton79.setBackground(Color.white);
+        jButton80.setBackground(Color.white);
+        jButton81.setBackground(Color.white);
+
+
+        
+        
+        
+        
+        
+        
+        
     }                                        
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
