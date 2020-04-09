@@ -7,60 +7,95 @@ package Formularios;
 
 import ClasesAdicionales.AdminArchivos;
 import java.awt.Color;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JButton;
 
 /**
  *
  * @author Mariela Rodriguez
  */
 public class Principal extends javax.swing.JFrame {
-    private static int nLineas=0;
-    private static int contadorS=0;
-    private static int contadorL=0;
+    private int nLineas=0;
+    private int contadorS=0;
+    private int contadorL=0;
     private int        nEntradas;
     private int        nSalidas;
     private String     nameFile;
-    
-    public int getnEntradas() {
-        return nEntradas;
-    }
-
-    /**
-     * @param nEntradas the nEntradas to set
-     */
-    public void setnEntradas(int nEntradas) {
-        this.nEntradas = nEntradas;
-    }
-
-    /**
-     * @return the nSalidas
-     */
-    public int getnSalidas() {
-        return nSalidas;
-    }
-
-    /**
-     * @param nSalidas the nSalidas to set
-     */
-    public void setnSalidas(int nSalidas) {
-        this.nSalidas = nSalidas;
-    }
-
-    /**
-     * @return the nameFile
-     */
-    public String getNameFile() {
-        return nameFile;
-    }
-
-    /**
-     * @param nameFile the nameFile to set
-     */
-    public void setNameFile(String nameFile) {
-        this.nameFile = nameFile;
-    }
+    private List<JButton> b = new ArrayList<>();
     
     public Principal() {
         initComponents();
+        
+        b.add(btn1);
+        b.add(btn2);
+        b.add(btn3);
+        b.add(btn4);
+        b.add(btn5);
+        b.add(btn6);
+        b.add(btn7);
+        b.add(btn8);
+        b.add(btn9);
+        b.add(btn10);
+        b.add(btn11);
+        b.add(btn12);
+        b.add(btn13);
+        b.add(btn14);
+        b.add(btn15);
+        b.add(btn16);
+        b.add(btn17);
+        b.add(btn18);
+        b.add(btn19);
+        b.add(btn20);
+        b.add(btn21);
+        b.add(btn22);
+        b.add(btn23);
+        b.add(btn24);
+        b.add(btn25);
+        b.add(btn26);
+        b.add(btn27);
+        b.add(btn28);
+        b.add(btn29);
+        b.add(btn30);
+        b.add(btn31);
+        b.add(btn32);
+        b.add(btn33);
+        b.add(btn34);
+        b.add(btn35);
+        b.add(btn36);
+        b.add(btn37);
+        b.add(btn38);
+        b.add(btn39);
+        b.add(btn40);
+        b.add(btn41);
+        b.add(btn42);
+        b.add(btn43);
+        b.add(btn44);
+        b.add(btn45);
+        b.add(btn46);
+        b.add(btn47);
+        b.add(btn48);
+        b.add(btn49);
+        b.add(btn50);
+        b.add(btn51);
+        b.add(btn52);
+        b.add(btn53);
+        b.add(btn54);
+        b.add(btn55);
+        b.add(btn56);
+        b.add(btn57);
+        b.add(btn58);
+        b.add(btn59);
+        b.add(btn60);
+        b.add(btn61);
+        b.add(btn62);
+        b.add(btn63);
+        
+        for(JButton boton: b){
+            boton.setBackground(Color.white);
+            boton.setEnabled(false);
+        }
     }
 
     /**
@@ -166,11 +201,11 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel5.setText("Lineas de Entrenamiento");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(12, 69, 118, 14);
+        jLabel5.setBounds(12, 69, 200, 14);
 
         lblNeurona.setText("Entrenamiento Neurona");
         jPanel1.add(lblNeurona);
-        lblNeurona.setBounds(12, 28, 114, 14);
+        lblNeurona.setBounds(12, 28, 210, 14);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -192,33 +227,83 @@ public class Principal extends javax.swing.JFrame {
         jPanel2.add(btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
 
         btn2.setBackground(new java.awt.Color(255, 255, 255));
+        btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn2ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 30, 30));
 
         btn3.setBackground(new java.awt.Color(255, 255, 255));
+        btn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn3ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 30, 30));
 
         btn4.setBackground(new java.awt.Color(255, 255, 255));
+        btn4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn4ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 30, 30));
 
         btn5.setBackground(new java.awt.Color(255, 255, 255));
+        btn5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn5ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 30, 30));
 
         btn6.setBackground(new java.awt.Color(255, 255, 255));
+        btn6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn6ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 30, 30));
 
         btn7.setBackground(new java.awt.Color(255, 255, 255));
+        btn7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn7ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 30, 30));
 
         btn8.setBackground(new java.awt.Color(255, 255, 255));
+        btn8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn8ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 30, 30));
 
         btn9.setBackground(new java.awt.Color(255, 255, 255));
+        btn9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn9ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 30, 30));
 
         btn10.setBackground(new java.awt.Color(255, 255, 255));
+        btn10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn10ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 30, 30));
 
         btn11.setBackground(new java.awt.Color(255, 255, 255));
+        btn11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn11ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn11, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, 30, 30));
 
         btn12.setBackground(new java.awt.Color(255, 255, 255));
@@ -230,156 +315,411 @@ public class Principal extends javax.swing.JFrame {
         jPanel2.add(btn12, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 30, 30));
 
         btn13.setBackground(new java.awt.Color(255, 255, 255));
+        btn13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn13ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn13, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 30, 30));
 
         btn14.setBackground(new java.awt.Color(255, 255, 255));
+        btn14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn14ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn14, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 30, 30));
 
         btn15.setBackground(new java.awt.Color(255, 255, 255));
+        btn15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn15ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 30, 30));
 
         btn16.setBackground(new java.awt.Color(255, 255, 255));
+        btn16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn16ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 30, 30));
 
         btn17.setBackground(new java.awt.Color(255, 255, 255));
+        btn17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn17ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn17, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 30, 30));
 
         btn18.setBackground(new java.awt.Color(255, 255, 255));
+        btn18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn18ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn18, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 30, 30));
 
         btn19.setBackground(new java.awt.Color(255, 255, 255));
+        btn19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn19ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn19, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 30, 30));
 
         btn20.setBackground(new java.awt.Color(255, 255, 255));
+        btn20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn20ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn20, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 30, 30));
 
         btn21.setBackground(new java.awt.Color(255, 255, 255));
+        btn21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn21ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn21, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 30, 30));
 
         btn22.setBackground(new java.awt.Color(255, 255, 255));
+        btn22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn22ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 30, 30));
 
         btn23.setBackground(new java.awt.Color(255, 255, 255));
+        btn23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn23ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn23, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 30, 30));
 
         btn24.setBackground(new java.awt.Color(255, 255, 255));
+        btn24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn24ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn24, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 30, 30));
 
         btn25.setBackground(new java.awt.Color(255, 255, 255));
+        btn25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn25ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn25, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 30, 30));
 
         btn26.setBackground(new java.awt.Color(255, 255, 255));
+        btn26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn26ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn26, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 30, 30));
 
         btn27.setBackground(new java.awt.Color(255, 255, 255));
+        btn27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn27ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn27, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 30, 30));
 
         btn28.setBackground(new java.awt.Color(255, 255, 255));
+        btn28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn28ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn28, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 30, 30));
 
         btn29.setBackground(new java.awt.Color(255, 255, 255));
+        btn29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn29ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn29, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 30, 30));
 
         btn30.setBackground(new java.awt.Color(255, 255, 255));
+        btn30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn30ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn30, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 30, 30));
 
         btn31.setBackground(new java.awt.Color(255, 255, 255));
+        btn31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn31ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn31, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 30, 30));
 
         btn32.setBackground(new java.awt.Color(255, 255, 255));
+        btn32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn32ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn32, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 30, 30));
 
         btn33.setBackground(new java.awt.Color(255, 255, 255));
+        btn33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn33ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn33, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 30, 30));
 
         btn34.setBackground(new java.awt.Color(255, 255, 255));
+        btn34.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn34ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn34, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 30, 30));
 
         btn35.setBackground(new java.awt.Color(255, 255, 255));
+        btn35.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn35ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn35, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 30, 30));
 
         btn36.setBackground(new java.awt.Color(255, 255, 255));
+        btn36.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn36ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn36, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 30, 30));
 
         btn37.setBackground(new java.awt.Color(255, 255, 255));
+        btn37.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn37ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn37, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 30, 30));
 
         btn38.setBackground(new java.awt.Color(255, 255, 255));
+        btn38.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn38ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn38, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 30, 30));
 
         btn39.setBackground(new java.awt.Color(255, 255, 255));
+        btn39.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn39ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn39, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 30, 30));
 
         btn40.setBackground(new java.awt.Color(255, 255, 255));
+        btn40.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn40ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn40, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 30, 30));
 
         btn41.setBackground(new java.awt.Color(255, 255, 255));
+        btn41.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn41ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn41, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 30, 30));
 
         btn42.setBackground(new java.awt.Color(255, 255, 255));
+        btn42.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn42ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn42, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 30, 30));
 
         btn43.setBackground(new java.awt.Color(255, 255, 255));
+        btn43.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn43ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn43, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 30, 30));
 
         btn44.setBackground(new java.awt.Color(255, 255, 255));
+        btn44.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn44ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn44, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 30, 30));
 
         btn45.setBackground(new java.awt.Color(255, 255, 255));
+        btn45.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn45ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn45, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 30, 30));
 
         btn46.setBackground(new java.awt.Color(255, 255, 255));
+        btn46.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn46ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn46, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 30, 30));
 
         btn47.setBackground(new java.awt.Color(255, 255, 255));
+        btn47.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn47ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn47, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 30, 30));
 
         btn48.setBackground(new java.awt.Color(255, 255, 255));
+        btn48.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn48ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn48, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 30, 30));
 
         btn49.setBackground(new java.awt.Color(255, 255, 255));
+        btn49.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn49ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn49, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 30, 30));
 
         btn50.setBackground(new java.awt.Color(255, 255, 255));
+        btn50.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn50ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn50, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 30, 30));
 
         btn51.setBackground(new java.awt.Color(255, 255, 255));
+        btn51.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn51ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn51, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 30, 30));
 
         btn52.setBackground(new java.awt.Color(255, 255, 255));
+        btn52.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn52ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn52, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 30, 30));
 
         btn53.setBackground(new java.awt.Color(255, 255, 255));
+        btn53.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn53ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn53, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 30, 30));
 
         btn54.setBackground(new java.awt.Color(255, 255, 255));
+        btn54.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn54ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn54, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 30, 30));
 
         btn55.setBackground(new java.awt.Color(255, 255, 255));
+        btn55.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn55ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn55, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 30, 30));
 
         btn56.setBackground(new java.awt.Color(255, 255, 255));
+        btn56.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn56ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn56, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 30, 30));
 
         btn57.setBackground(new java.awt.Color(255, 255, 255));
+        btn57.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn57ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn57, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 30, 30));
 
         btn58.setBackground(new java.awt.Color(255, 255, 255));
+        btn58.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn58ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn58, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 30, 30));
 
         btn59.setBackground(new java.awt.Color(255, 255, 255));
+        btn59.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn59ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn59, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 30, 30));
 
         btn60.setBackground(new java.awt.Color(255, 255, 255));
+        btn60.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn60ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn60, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 30, 30));
 
         btn61.setBackground(new java.awt.Color(255, 255, 255));
+        btn61.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn61ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn61, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 30, 30));
 
         btn62.setBackground(new java.awt.Color(255, 255, 255));
+        btn62.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn62ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn62, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 30, 30));
 
         btn63.setBackground(new java.awt.Color(255, 255, 255));
+        btn63.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn63ActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn63, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 30, 30));
 
         btnDigitalizar.setText("Digitalizar");
@@ -504,24 +844,26 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
-        this.setnEntradas(Integer.parseInt(txtEntradas.getText()));
-        this.setnSalidas(Integer.parseInt(txtSalida.getText()));
-        this.setNameFile(txtnameFile.getText());
+        this.nEntradas = Integer.parseInt(txtEntradas.getText());
+        this.nSalidas = Integer.parseInt(txtSalida.getText());
+        this.nameFile = txtnameFile.getText();
+        contadorL=0;
+        AdminArchivos.escribir(nameFile,"");
         
-        AdminArchivos.escribir(getNameFile(),"");
-        
-        txtLinea.setEnabled(true);
+        btnCrear.setEnabled(false);
         txtEntradas.setEnabled(false);
         txtSalida.setEnabled(false);
         txtnameFile.setEnabled(false);
         btnDatos.setEnabled(true);
+        txtLinea.setEnabled(true);
         
-        contadorS++;
-        lblNeurona.setText("Entrenamiento Neurona " +contadorS);
+        lblNeurona.setText("Entrenamiento Neurona " + contadorS);
     }//GEN-LAST:event_btnCrearActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-        // TODO add your handling code here:
+        for(JButton boton: b){
+            boton.setBackground(Color.white);
+        }
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void txtSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSalidaActionPerformed
@@ -533,17 +875,58 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEntrenarActionPerformed
 
     private void btnDigitalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDigitalizarActionPerformed
-        // TODO add your handling code here:
+        contadorL++;
+        String cadenaEntradas = "";
+        String cadenaSalidas = "";
+        for(JButton boton: b){
+            if (boton.getBackground() == Color.white){
+                cadenaEntradas += "-1,";
+            }else{
+                cadenaEntradas += "1,";
+            }
+            boton.setBackground(Color.white);
+        }
+        
+        for(int a = 1; a <= nSalidas ; a++ ){
+            if(a == contadorS){
+                cadenaSalidas += "1,";
+            }else{
+                cadenaSalidas += "-1,";
+            }
+        }
+        cadenaSalidas = cadenaSalidas.substring(0, cadenaSalidas.length() - 1);
+        AdminArchivos.agregarDatos(nameFile, (cadenaEntradas + cadenaSalidas) );
+        
+        if (contadorL == nLineas){
+            btnDigitalizar.setEnabled(false);
+            btnLimpiar.setEnabled(false);
+            for(JButton boton: b){
+                boton.setEnabled(false);
+            }
+            
+            if (contadorS == nSalidas){
+                btnEntrenar.setEnabled(true);
+            }else{
+                btnDatos.setEnabled(true);
+                txtLinea.setEnabled(true);
+            }
+        }
+        
     }//GEN-LAST:event_btnDigitalizarActionPerformed
 
     private void btnDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDatosActionPerformed
-        nLineas=(Integer.parseInt(txtLinea.getText()));
         contadorS++;
-        btnDigitalizar.setEnabled(true);
-        btnLimpiar.setEnabled(true);
+        nLineas=(Integer.parseInt(txtLinea.getText()));
+        contadorL=0;
+        lblNeurona.setText("Entrenamiento Neurona " + contadorS);
+        
         btnDatos.setEnabled(false);
         txtLinea.setEnabled(false);
-        
+        btnDigitalizar.setEnabled(true);
+        btnLimpiar.setEnabled(true);
+        for(JButton boton: b){
+            boton.setEnabled(true);
+        }
     }//GEN-LAST:event_btnDatosActionPerformed
 
     private void txtEntradasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEntradasActionPerformed
@@ -551,7 +934,11 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEntradasActionPerformed
 
     private void btn12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn12ActionPerformed
-        // TODO add your handling code here:
+        if(btn12.getBackground() == Color.white){
+            btn12.setBackground(Color.black);
+        }else{
+            btn12.setBackground(Color.white);
+        }
     }//GEN-LAST:event_btn12ActionPerformed
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
@@ -560,8 +947,495 @@ public class Principal extends javax.swing.JFrame {
         }else{
             btn1.setBackground(Color.white);
         }
-        
     }//GEN-LAST:event_btn1ActionPerformed
+
+    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+        if(btn2.getBackground() == Color.white){
+            btn2.setBackground(Color.black);
+        }else{
+            btn2.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn2ActionPerformed
+
+    private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
+        if(btn3.getBackground() == Color.white){
+            btn3.setBackground(Color.black);
+        }else{
+            btn3.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn3ActionPerformed
+
+    private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
+        if(btn4.getBackground() == Color.white){
+            btn4.setBackground(Color.black);
+        }else{
+            btn4.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn4ActionPerformed
+
+    private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
+        if(btn5.getBackground() == Color.white){
+            btn5.setBackground(Color.black);
+        }else{
+            btn5.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn5ActionPerformed
+
+    private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
+        if(btn6.getBackground() == Color.white){
+            btn6.setBackground(Color.black);
+        }else{
+            btn6.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn6ActionPerformed
+
+    private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
+        if(btn7.getBackground() == Color.white){
+            btn7.setBackground(Color.black);
+        }else{
+            btn7.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn7ActionPerformed
+
+    private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
+        if(btn8.getBackground() == Color.white){
+            btn8.setBackground(Color.black);
+        }else{
+            btn8.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn8ActionPerformed
+
+    private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
+        if(btn9.getBackground() == Color.white){
+            btn9.setBackground(Color.black);
+        }else{
+            btn9.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn9ActionPerformed
+
+    private void btn10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn10ActionPerformed
+        if(btn10.getBackground() == Color.white){
+            btn10.setBackground(Color.black);
+        }else{
+            btn10.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn10ActionPerformed
+
+    private void btn11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn11ActionPerformed
+        if(btn11.getBackground() == Color.white){
+            btn11.setBackground(Color.black);
+        }else{
+            btn11.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn11ActionPerformed
+
+    private void btn13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn13ActionPerformed
+        if(btn13.getBackground() == Color.white){
+            btn13.setBackground(Color.black);
+        }else{
+            btn13.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn13ActionPerformed
+
+    private void btn14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn14ActionPerformed
+        if(btn14.getBackground() == Color.white){
+            btn14.setBackground(Color.black);
+        }else{
+            btn14.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn14ActionPerformed
+
+    private void btn15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn15ActionPerformed
+        if(btn15.getBackground() == Color.white){
+            btn15.setBackground(Color.black);
+        }else{
+            btn15.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn15ActionPerformed
+
+    private void btn16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn16ActionPerformed
+        if(btn16.getBackground() == Color.white){
+            btn16.setBackground(Color.black);
+        }else{
+            btn16.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn16ActionPerformed
+
+    private void btn17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn17ActionPerformed
+        if(btn17.getBackground() == Color.white){
+            btn17.setBackground(Color.black);
+        }else{
+            btn17.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn17ActionPerformed
+
+    private void btn18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn18ActionPerformed
+        if(btn18.getBackground() == Color.white){
+            btn18.setBackground(Color.black);
+        }else{
+            btn18.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn18ActionPerformed
+
+    private void btn19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn19ActionPerformed
+        if(btn19.getBackground() == Color.white){
+            btn19.setBackground(Color.black);
+        }else{
+            btn19.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn19ActionPerformed
+
+    private void btn20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn20ActionPerformed
+        if(btn20.getBackground() == Color.white){
+            btn20.setBackground(Color.black);
+        }else{
+            btn20.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn20ActionPerformed
+
+    private void btn21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn21ActionPerformed
+        if(btn21.getBackground() == Color.white){
+            btn21.setBackground(Color.black);
+        }else{
+            btn21.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn21ActionPerformed
+
+    private void btn22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn22ActionPerformed
+        if(btn22.getBackground() == Color.white){
+            btn22.setBackground(Color.black);
+        }else{
+            btn22.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn22ActionPerformed
+
+    private void btn23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn23ActionPerformed
+        if(btn23.getBackground() == Color.white){
+            btn23.setBackground(Color.black);
+        }else{
+            btn23.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn23ActionPerformed
+
+    private void btn24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn24ActionPerformed
+        if(btn24.getBackground() == Color.white){
+            btn24.setBackground(Color.black);
+        }else{
+            btn24.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn24ActionPerformed
+
+    private void btn25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn25ActionPerformed
+        if(btn25.getBackground() == Color.white){
+            btn25.setBackground(Color.black);
+        }else{
+            btn25.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn25ActionPerformed
+
+    private void btn26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn26ActionPerformed
+        if(btn26.getBackground() == Color.white){
+            btn26.setBackground(Color.black);
+        }else{
+            btn26.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn26ActionPerformed
+
+    private void btn27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn27ActionPerformed
+        if(btn27.getBackground() == Color.white){
+            btn27.setBackground(Color.black);
+        }else{
+            btn27.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn27ActionPerformed
+
+    private void btn28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn28ActionPerformed
+        if(btn28.getBackground() == Color.white){
+            btn28.setBackground(Color.black);
+        }else{
+            btn28.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn28ActionPerformed
+
+    private void btn29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn29ActionPerformed
+        if(btn29.getBackground() == Color.white){
+            btn29.setBackground(Color.black);
+        }else{
+            btn29.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn29ActionPerformed
+
+    private void btn30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn30ActionPerformed
+        if(btn30.getBackground() == Color.white){
+            btn30.setBackground(Color.black);
+        }else{
+            btn30.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn30ActionPerformed
+
+    private void btn31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn31ActionPerformed
+        if(btn31.getBackground() == Color.white){
+            btn31.setBackground(Color.black);
+        }else{
+            btn31.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn31ActionPerformed
+
+    private void btn32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn32ActionPerformed
+        if(btn32.getBackground() == Color.white){
+            btn32.setBackground(Color.black);
+        }else{
+            btn32.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn32ActionPerformed
+
+    private void btn33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn33ActionPerformed
+        if(btn33.getBackground() == Color.white){
+            btn33.setBackground(Color.black);
+        }else{
+            btn33.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn33ActionPerformed
+
+    private void btn34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn34ActionPerformed
+        if(btn34.getBackground() == Color.white){
+            btn34.setBackground(Color.black);
+        }else{
+            btn34.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn34ActionPerformed
+
+    private void btn35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn35ActionPerformed
+        if(btn35.getBackground() == Color.white){
+            btn35.setBackground(Color.black);
+        }else{
+            btn35.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn35ActionPerformed
+
+    private void btn36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn36ActionPerformed
+        if(btn36.getBackground() == Color.white){
+            btn36.setBackground(Color.black);
+        }else{
+            btn36.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn36ActionPerformed
+
+    private void btn37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn37ActionPerformed
+        if(btn37.getBackground() == Color.white){
+            btn37.setBackground(Color.black);
+        }else{
+            btn37.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn37ActionPerformed
+
+    private void btn38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn38ActionPerformed
+        if(btn38.getBackground() == Color.white){
+            btn38.setBackground(Color.black);
+        }else{
+            btn38.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn38ActionPerformed
+
+    private void btn39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn39ActionPerformed
+        if(btn39.getBackground() == Color.white){
+            btn39.setBackground(Color.black);
+        }else{
+            btn39.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn39ActionPerformed
+
+    private void btn40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn40ActionPerformed
+        if(btn40.getBackground() == Color.white){
+            btn40.setBackground(Color.black);
+        }else{
+            btn40.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn40ActionPerformed
+
+    private void btn41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn41ActionPerformed
+        if(btn41.getBackground() == Color.white){
+            btn41.setBackground(Color.black);
+        }else{
+            btn41.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn41ActionPerformed
+
+    private void btn42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn42ActionPerformed
+        if(btn42.getBackground() == Color.white){
+            btn42.setBackground(Color.black);
+        }else{
+            btn42.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn42ActionPerformed
+
+    private void btn43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn43ActionPerformed
+        if(btn43.getBackground() == Color.white){
+            btn43.setBackground(Color.black);
+        }else{
+            btn43.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn43ActionPerformed
+
+    private void btn44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn44ActionPerformed
+        if(btn44.getBackground() == Color.white){
+            btn44.setBackground(Color.black);
+        }else{
+            btn44.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn44ActionPerformed
+
+    private void btn45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn45ActionPerformed
+        if(btn45.getBackground() == Color.white){
+            btn45.setBackground(Color.black);
+        }else{
+            btn45.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn45ActionPerformed
+
+    private void btn46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn46ActionPerformed
+        if(btn46.getBackground() == Color.white){
+            btn46.setBackground(Color.black);
+        }else{
+            btn46.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn46ActionPerformed
+
+    private void btn47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn47ActionPerformed
+        if(btn47.getBackground() == Color.white){
+            btn47.setBackground(Color.black);
+        }else{
+            btn47.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn47ActionPerformed
+
+    private void btn48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn48ActionPerformed
+        if(btn48.getBackground() == Color.white){
+            btn48.setBackground(Color.black);
+        }else{
+            btn48.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn48ActionPerformed
+
+    private void btn49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn49ActionPerformed
+        if(btn49.getBackground() == Color.white){
+            btn49.setBackground(Color.black);
+        }else{
+            btn49.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn49ActionPerformed
+
+    private void btn50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn50ActionPerformed
+        if(btn50.getBackground() == Color.white){
+            btn50.setBackground(Color.black);
+        }else{
+            btn50.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn50ActionPerformed
+
+    private void btn51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn51ActionPerformed
+        if(btn51.getBackground() == Color.white){
+            btn51.setBackground(Color.black);
+        }else{
+            btn51.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn51ActionPerformed
+
+    private void btn52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn52ActionPerformed
+        if(btn52.getBackground() == Color.white){
+            btn52.setBackground(Color.black);
+        }else{
+            btn52.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn52ActionPerformed
+
+    private void btn53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn53ActionPerformed
+        if(btn53.getBackground() == Color.white){
+            btn53.setBackground(Color.black);
+        }else{
+            btn53.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn53ActionPerformed
+
+    private void btn54ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn54ActionPerformed
+        if(btn54.getBackground() == Color.white){
+            btn54.setBackground(Color.black);
+        }else{
+            btn54.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn54ActionPerformed
+
+    private void btn55ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn55ActionPerformed
+        if(btn55.getBackground() == Color.white){
+            btn55.setBackground(Color.black);
+        }else{
+            btn55.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn55ActionPerformed
+
+    private void btn56ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn56ActionPerformed
+        if(btn56.getBackground() == Color.white){
+            btn56.setBackground(Color.black);
+        }else{
+            btn56.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn56ActionPerformed
+
+    private void btn57ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn57ActionPerformed
+        if(btn57.getBackground() == Color.white){
+            btn57.setBackground(Color.black);
+        }else{
+            btn57.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn57ActionPerformed
+
+    private void btn58ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn58ActionPerformed
+        if(btn58.getBackground() == Color.white){
+            btn58.setBackground(Color.black);
+        }else{
+            btn58.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn58ActionPerformed
+
+    private void btn59ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn59ActionPerformed
+        if(btn59.getBackground() == Color.white){
+            btn59.setBackground(Color.black);
+        }else{
+            btn59.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn59ActionPerformed
+
+    private void btn60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn60ActionPerformed
+        if(btn60.getBackground() == Color.white){
+            btn60.setBackground(Color.black);
+        }else{
+            btn60.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn60ActionPerformed
+
+    private void btn61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn61ActionPerformed
+        if(btn61.getBackground() == Color.white){
+            btn61.setBackground(Color.black);
+        }else{
+            btn61.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn61ActionPerformed
+
+    private void btn62ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn62ActionPerformed
+        if(btn62.getBackground() == Color.white){
+            btn62.setBackground(Color.black);
+        }else{
+            btn62.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn62ActionPerformed
+
+    private void btn63ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn63ActionPerformed
+        if(btn63.getBackground() == Color.white){
+            btn63.setBackground(Color.black);
+        }else{
+            btn63.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn63ActionPerformed
 
     /**
      * @param args the command line arguments
