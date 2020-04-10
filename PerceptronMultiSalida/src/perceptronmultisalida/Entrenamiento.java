@@ -18,10 +18,9 @@ public class Entrenamiento {
     
     public static void Entrenar(
             Perceptron p,
-            TablaEntrenamiento t,
-            int alfa,
-            int teta
+            TablaEntrenamiento t
     ){
+        int alfa = p.getAlfa();
         int nFilas = t.getnFilas();
         int nEntradas = t.getnX();
         int nSalidas = t.getnY();
@@ -46,7 +45,7 @@ public class Entrenamiento {
                 for ( int j = 0 ; j < nSalidas ; j++ ){
                     // Paso 4
                     Funcion.y_inj(p, t, i, j);
-                    Funcion.yj(p, t, i, j, teta);
+                    Funcion.yj(p, t, i, j);
                     
                     // Paso 5
                     if( t.getTablaTarget()[i][j] != p.getYj()[i][j] ){
@@ -100,7 +99,7 @@ public class Entrenamiento {
         tazaFallos = ( (double)((epocas * nFilas) - aciertos) / (epocas * nFilas) )*100;
         System.out.println("<===== {Informacion del Entrenamiento} =====>");
         System.out.println("Epocas:" + epocas);
-        System.out.println("Total de Oruebas:" + (epocas * nFilas) );
+        System.out.println("Total de Pruebas:" + (epocas * nFilas) );
         System.out.println("Taza de Aciertos:" + tazaAciertos + "");
         System.out.println("Taza de Fallos:" + tazaFallos );
         System.out.println("");

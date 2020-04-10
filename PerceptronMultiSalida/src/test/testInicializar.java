@@ -102,9 +102,7 @@ public class testInicializar {
         // <=== {Entrenar} ===>
         Entrenamiento.Entrenar(
                 Globals.perceptron,
-                Globals.tabla_verdad,
-                alfa,
-                teta
+                Globals.tabla_verdad
         );
         
         
@@ -138,6 +136,6 @@ public class testInicializar {
         
         System.out.println("");
         System.out.println("<===== {Ejecución del Perceptron} =====>");
-        Funcion.Ejecutar(Globals.perceptron, Globals.tabla_verdad, teta);
+        Funcion.Ejecutar(Globals.perceptron, Globals.tabla_verdad);
     }
 }

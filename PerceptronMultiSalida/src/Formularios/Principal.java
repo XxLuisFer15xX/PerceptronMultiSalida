@@ -16,8 +16,10 @@ import java.util.Scanner;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import perceptronmultisalida.Entrenamiento;
+import perceptronmultisalida.Funcion;
 import perceptronmultisalida.Inicializar;
 import perceptronmultisalida.Perceptron;
+import perceptronmultisalida.Resultado;
 import perceptronmultisalida.TablaEntrenamiento;
 
 /**
@@ -966,14 +968,41 @@ public class Principal extends javax.swing.JFrame {
         Inicializar.InicializarTablaEntrenamiento(Globals.tabla_verdad, vectorEntrada, vectorSalida);
         Inicializar.InicializarPerceptron(Globals.perceptron, Globals.tabla_verdad);
 
-        
         // <=== {Entrenar} ===>
         Entrenamiento.Entrenar(
                 Globals.perceptron,
-                Globals.tabla_verdad,
-                alfa,
-                teta
+                Globals.tabla_verdad
         );
+        
+        System.out.println("<===== {Informacion Basica del Perceptron} =====>");
+        Resultado.MostrarPerceptronAtributos(Globals.perceptron, Globals.tabla_verdad);
+        
+        System.out.println("<===== {Informacion de las Entradas} =====>");
+        Resultado.MostrarTablaEntradas(Globals.tabla_verdad);
+        Resultado.MostrarTablaTarget(Globals.tabla_verdad);
+        Resultado.MostrarTablaBias(Globals.tabla_verdad);
+        System.out.println("");
+        
+        System.out.println("<===== {Informacion de los Pesos} =====>");
+        Resultado.MostrarPerceptronWeight(Globals.perceptron, Globals.tabla_verdad);
+        Resultado.MostrarPerceptronWeightChange(Globals.perceptron, Globals.tabla_verdad);
+        
+        System.out.println("<===== {Informacion de la Funcion de Activacion} =====>");
+        Resultado.MostrarPerceptronFuncion(Globals.perceptron, Globals.tabla_verdad);
+        
+        System.out.println("");
+        System.out.println("<===== {Ejecución del Perceptron} =====>");
+        Funcion.Ejecutar(Globals.perceptron, Globals.tabla_verdad);
+        
+        
+        
+        
+        /*
+        
+        */
+        
+        Aprendisaje form2 = new Aprendisaje();
+        form2.setVisible(true);
     }//GEN-LAST:event_btnEntrenarActionPerformed
 
     private void btnDigitalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDigitalizarActionPerformed
