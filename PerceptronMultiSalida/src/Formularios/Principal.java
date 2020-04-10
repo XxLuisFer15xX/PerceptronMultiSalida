@@ -36,6 +36,7 @@ public class Principal extends javax.swing.JFrame {
     private int        teta;
     private String     nameFile;
     private List<JButton> b = new ArrayList<>();
+    private boolean    noLetras = false;
     
     public Principal() {
         initComponents();
@@ -221,7 +222,7 @@ public class Principal extends javax.swing.JFrame {
 
         lblNeurona.setText("Entrenamiento Neurona");
         jPanel1.add(lblNeurona);
-        lblNeurona.setBounds(12, 28, 210, 14);
+        lblNeurona.setBounds(12, 28, 290, 14);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -875,7 +876,6 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(txtTeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7)
                             .addComponent(txtSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -924,8 +924,6 @@ public class Principal extends javax.swing.JFrame {
 
     private void btnEntrenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrenarActionPerformed
         // TODO add your handling code here:
-        int numeroFilas = 0;
-        
         // <=== {Inicializar} ===>
         ArrayList<ArrayList<Integer>> vectorEntrada = new ArrayList<>();
         ArrayList<ArrayList<Integer>> vectorSalida = new ArrayList<>();
@@ -1018,7 +1016,7 @@ public class Principal extends javax.swing.JFrame {
             boton.setBackground(Color.white);
         }
         
-        for(int a = 1; a <= nSalidas ; a++ ){
+        for(int a = 0; a < nSalidas ; a++ ){
             if(a == contadorS){
                 cadenaSalidas += "1,";
             }else{
@@ -1035,21 +1033,31 @@ public class Principal extends javax.swing.JFrame {
                 boton.setEnabled(false);
             }
             
-            if (contadorS == nSalidas){
+            if (contadorS == (nSalidas - 1)){
+                contadorS++;
+                noLetras = true;
+                btnDatos.setEnabled(true);
+                txtLinea.setEnabled(true);
+            }else if (contadorS == nSalidas){
                 btnEntrenar.setEnabled(true);
             }else{
+                contadorS++;
                 btnDatos.setEnabled(true);
                 txtLinea.setEnabled(true);
             }
         }
-        
+        if (noLetras == true){
+            lblNeurona.setText("Entrenamiento de letras incorrectas");
+        }else{
+            lblNeurona.setText("Entrenamiento Neurona " + contadorS);
+        }
     }//GEN-LAST:event_btnDigitalizarActionPerformed
 
     private void btnDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDatosActionPerformed
-        contadorS++;
         nLineas=(Integer.parseInt(txtLinea.getText()));
         contadorL=0;
-        lblNeurona.setText("Entrenamiento Neurona " + contadorS);
+        
+        
         
         btnDatos.setEnabled(false);
         txtLinea.setEnabled(false);

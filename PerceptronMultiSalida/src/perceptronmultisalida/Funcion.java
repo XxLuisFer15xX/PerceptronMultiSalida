@@ -106,13 +106,15 @@ public class Funcion {
         Perceptron p,
         TablaEntrenamiento t,
         int[] entradas,
-        char[] caracterLetra
+        String[] caracterLetra
     ){
         // Prueba de los pesos
         int Y_inj = 0;
         int Yj = 0;
         String letra = "Error no se reconoce la letra";
         System.out.println("Y_inj = (bj) + Sumatoria(xi*wij)");
+        int contador = 0;
+        int nLetra = 0;
         for ( int j = 0 ; j < t.getnY() ; j++ ){
             // Encabezado
             System.out.println();
@@ -137,17 +139,25 @@ public class Funcion {
             System.out.print( "\t\t " + "t" + (j+1) + " = ");
             if (Y_inj > p.getTeta()){
                 Yj = 1;
-                letra = Character.toString(caracterLetra[j]);
+                
+                contador++;
+                nLetra = j;
             } else if (   (-1)*p.getTeta() <= Y_inj   &&   Y_inj <= p.getTeta() ){
                 Yj = 0;
+                
+                contador = -1;
+                j = t.getnY();
             }else if ( Y_inj < (-1)*p.getTeta() ){
                 Yj = -1;
+                
             }
             System.out.println(Yj);
 
             System.out.println();
         }
-        
-        return "La letra digitalizada es: " + letra;
+        if (contador == 1){
+            letra = "La letra digitalizada es: "+ caracterLetra[nLetra];
+        }
+        return letra;
     }
 }

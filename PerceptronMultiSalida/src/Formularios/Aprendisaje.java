@@ -774,14 +774,14 @@ public class Aprendisaje extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        char[] caracterLetra = new char[7];
-        caracterLetra[0] = 'A';
-        caracterLetra[1] = 'B';
-        caracterLetra[2] = 'C';
-        caracterLetra[3] = 'D';
-        caracterLetra[4] = 'E';
-        caracterLetra[5] = 'J';
-        caracterLetra[6] = 'K';
+        String[] caracterLetra = new String[7];
+        caracterLetra[0] = "A";
+        caracterLetra[1] = "B";
+        caracterLetra[2] = "C";
+        caracterLetra[3] = "D";
+        caracterLetra[4] = "E";
+        caracterLetra[5] = "J";
+        caracterLetra[6] = "K";
         jTextField4.setText(Funcion.EjecutarAprendisaje(Globals.perceptron, Globals.tabla_verdad, this.entradas, caracterLetra));
         /*
         for (int i = 0; i < 63; i++) {
