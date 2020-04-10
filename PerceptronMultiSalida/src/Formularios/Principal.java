@@ -25,11 +25,13 @@ import perceptronmultisalida.TablaEntrenamiento;
  * @author Mariela Rodriguez
  */
 public class Principal extends javax.swing.JFrame {
-    private int nLineas=0;
-    private int contadorS=0;
-    private int contadorL=0;
+    private int        nLineas=0;
+    private int        contadorS=0;
+    private int        contadorL=0;
     private int        nEntradas;
     private int        nSalidas;
+    private int        alfa;
+    private int        teta;
     private String     nameFile;
     private List<JButton> b = new ArrayList<>();
     
@@ -195,6 +197,10 @@ public class Principal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         btnCrear = new javax.swing.JButton();
         btnEntrenar = new javax.swing.JButton();
+        txtAlfa = new javax.swing.JTextField();
+        txtTeta = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -757,7 +763,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel2.setText("Cantidad de Salidas:");
 
         jLabel3.setText("Nombre Tabla de Entrenamiento:");
-        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         txtEntradas.setName(""); // NOI18N
         txtEntradas.addActionListener(new java.awt.event.ActionListener() {
@@ -791,35 +796,59 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        txtAlfa.setName(""); // NOI18N
+        txtAlfa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAlfaActionPerformed(evt);
+            }
+        });
+
+        txtTeta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTetaActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Taza de aprendisaje:");
+
+        jLabel7.setText("Umbral:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(77, 77, 77)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel1))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtEntradas, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtnameFile, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(29, 29, 29)
-                        .addComponent(btnCrear)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(63, 63, 63)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 549, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEntrenar, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1))
+                        .addGap(68, 68, 68)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtEntradas, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtAlfa, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
+                            .addComponent(txtTeta)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 549, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnEntrenar, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtnameFile)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCrear)))
                 .addContainerGap(70, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -828,24 +857,33 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(jLabel4)
                 .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtEntradas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel2)
+                        .addGap(6, 6, 6))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(txtAlfa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtEntradas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtTeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7)
+                            .addComponent(txtSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel3)
-                        .addComponent(txtnameFile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
+                        .addComponent(txtnameFile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(33, 33, 33)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnEntrenar)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         pack();
@@ -854,6 +892,8 @@ public class Principal extends javax.swing.JFrame {
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
         this.nEntradas = Integer.parseInt(txtEntradas.getText());
         this.nSalidas = Integer.parseInt(txtSalida.getText());
+        this.alfa = Integer.parseInt(txtAlfa.getText());
+        this.teta = Integer.parseInt(txtTeta.getText());
         this.nameFile = txtnameFile.getText();
         contadorL=0;
         AdminArchivos.escribir(nameFile,"");
@@ -861,6 +901,8 @@ public class Principal extends javax.swing.JFrame {
         btnCrear.setEnabled(false);
         txtEntradas.setEnabled(false);
         txtSalida.setEnabled(false);
+        txtAlfa.setEnabled(false);
+        txtTeta.setEnabled(false);
         txtnameFile.setEnabled(false);
         btnDatos.setEnabled(true);
         txtLinea.setEnabled(true);
@@ -880,26 +922,14 @@ public class Principal extends javax.swing.JFrame {
 
     private void btnEntrenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrenarActionPerformed
         // TODO add your handling code here:
-        contadorL++;
-
-                
-  Scanner teclado = new Scanner(System.in);
-     
-        int alfa = 1;
-        int teta =0;
+        int numeroFilas = 0;
         
-        String nombreDocumento = "";
-        nEntradas = teclado.nextInt();
-        nSalidas = teclado.nextInt();
-         nLineas = teclado.nextInt();
-        nombreDocumento = teclado.next();
-     
         // <=== {Inicializar} ===>
         ArrayList<ArrayList<Integer>> vectorEntrada = new ArrayList<>();
         ArrayList<ArrayList<Integer>> vectorSalida = new ArrayList<>();
         
         nLineas = Inicializar.leerFilasCsv(
-                nombreDocumento,
+                nameFile,
                 vectorEntrada,
                 vectorSalida,
                 nEntradas,
@@ -908,11 +938,6 @@ public class Principal extends javax.swing.JFrame {
         if (nLineas == -1){
          JOptionPane.showMessageDialog(this, "Error al leer el documento, los datos no coinciden con las entras y salidas especificadas", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
         }
-        
-     
-        alfa = teclado.nextInt();
-       
-        teta = teclado.nextInt();
         
         
         // Instancia Tabla_Verdad
@@ -949,17 +974,6 @@ public class Principal extends javax.swing.JFrame {
                 alfa,
                 teta
         );
-      
-       
-        if (contadorL == nLineas){
-            btnDigitalizar.setEnabled(false);
-            btnLimpiar.setEnabled(false);
-            for(JButton boton: b){
-                boton.setEnabled(false);
-            }
-            
-         
-        }
     }//GEN-LAST:event_btnEntrenarActionPerformed
 
     private void btnDigitalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDigitalizarActionPerformed
@@ -1020,14 +1034,6 @@ public class Principal extends javax.swing.JFrame {
     private void txtEntradasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEntradasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEntradasActionPerformed
-
-    private void btn12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn12ActionPerformed
-        if(btn12.getBackground() == Color.white){
-            btn12.setBackground(Color.black);
-        }else{
-            btn12.setBackground(Color.white);
-        }
-    }//GEN-LAST:event_btn12ActionPerformed
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
         if(btn1.getBackground() == Color.white){
@@ -1116,6 +1122,14 @@ public class Principal extends javax.swing.JFrame {
             btn11.setBackground(Color.white);
         }
     }//GEN-LAST:event_btn11ActionPerformed
+
+    private void btn12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn12ActionPerformed
+        if(btn12.getBackground() == Color.white){
+            btn12.setBackground(Color.black);
+        }else{
+            btn12.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_btn12ActionPerformed
 
     private void btn13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn13ActionPerformed
         if(btn13.getBackground() == Color.white){
@@ -1525,6 +1539,14 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn63ActionPerformed
 
+    private void txtAlfaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAlfaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAlfaActionPerformed
+
+    private void txtTetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTetaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTetaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1634,12 +1656,16 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblNeurona;
+    private javax.swing.JTextField txtAlfa;
     private javax.swing.JTextField txtEntradas;
     private javax.swing.JTextField txtLinea;
     private javax.swing.JTextField txtSalida;
+    private javax.swing.JTextField txtTeta;
     private javax.swing.JTextField txtnameFile;
     // End of variables declaration//GEN-END:variables
 }
