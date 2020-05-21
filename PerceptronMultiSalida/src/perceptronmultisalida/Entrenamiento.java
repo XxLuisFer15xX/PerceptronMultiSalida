@@ -93,12 +93,12 @@ public class Entrenamiento {
             if ( (  nFilas * ((nEntradas*nSalidas) + nSalidas)  ) == contador ){
                 condicionParada = false;
             }
-            System.out.println("");
+            System.out.println("Epoca: " + epocas);
         }
         tazaAciertos = ( (double) aciertos / (epocas * nFilas) )*100;
         tazaFallos = ( (double)((epocas * nFilas) - aciertos) / (epocas * nFilas) )*100;
         System.out.println("<===== {Informacion del Entrenamiento} =====>");
-        System.out.println("Epocas:" + epocas);
+        System.out.println("Epocas: " + epocas);
         System.out.println("Total de Pruebas:" + (epocas * nFilas) );
         System.out.println("Taza de Aciertos:" + tazaAciertos + "");
         System.out.println("Taza de Fallos:" + tazaFallos );

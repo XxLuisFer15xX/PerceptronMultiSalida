@@ -18,5 +18,6 @@ public class Globals {
     public static Perceptron perceptron;
     public static TablaEntrenamiento tabla_verdad;
     public static String archivoEntrenamiento;
+    public static String[] palabras;
     
 }
