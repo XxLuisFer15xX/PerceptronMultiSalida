@@ -93,6 +93,7 @@
                                           <Component id="txtPalabraCorrecta" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
+                                  <Component id="btnPronunciar" alignment="1" min="-2" pref="136" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
@@ -163,7 +164,9 @@
                   <Component id="txtPalabraCorrecta" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="273" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="btnPronunciar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="232" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -297,6 +300,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Palabra Correcta:"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnPronunciar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pronunciar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPronunciarActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

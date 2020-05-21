@@ -7,6 +7,8 @@ package Formularios;
 
 import ClasesAdicionales.AdminArchivos;
 import ClasesAdicionales.Globals;
+import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.VoiceManager;
 import test.testInicializar;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
@@ -80,6 +82,7 @@ public class Letras extends javax.swing.JFrame {
         btnReconocer = new javax.swing.JButton();
         txtPalabraCorrecta = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
+        btnPronunciar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -168,6 +171,13 @@ public class Letras extends javax.swing.JFrame {
 
         jLabel9.setText("Palabra Correcta:");
 
+        btnPronunciar.setText("Pronunciar");
+        btnPronunciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPronunciarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -224,7 +234,8 @@ public class Letras extends javax.swing.JFrame {
                                                 .addComponent(txtPalabra)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(btnReconocer, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(txtPalabraCorrecta))))
+                                            .addComponent(txtPalabraCorrecta)))
+                                    .addComponent(btnPronunciar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(70, 70, 70))
         );
@@ -275,7 +286,9 @@ public class Letras extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtPalabraCorrecta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
-                .addContainerGap(273, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnPronunciar)
+                .addContainerGap(232, Short.MAX_VALUE))
         );
 
         pack();
@@ -510,6 +523,22 @@ public class Letras extends javax.swing.JFrame {
         )  );
     }//GEN-LAST:event_btnReconocerActionPerformed
 
+    private void btnPronunciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPronunciarActionPerformed
+        String frase = "";
+        frase = this.txtPalabraCorrecta.getText();
+        System.setProperty("mbrola.base", "C:\\Users\\Luis Fernando\\Desktop\\mbrola\\mbrola\\mbrola");
+        VoiceManager manager =  VoiceManager.getInstance();
+        Voice voz = manager.getVoice("mbrola_us1");// se puede usar voz mbrola_us1,mbrola_us2, mbrola_us3 kevin16
+        voz.allocate();
+            voz.speak(frase);
+           /* for(int i=0; i<=10;i++){
+            voz.speak(Integer.toString(i));
+            }*/
+            voz.deallocate();
+        
+        
+    }//GEN-LAST:event_btnPronunciarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -550,6 +579,7 @@ public class Letras extends javax.swing.JFrame {
     private javax.swing.JButton btnArchivo;
     private javax.swing.JButton btnCrear;
     private javax.swing.JButton btnEntrenar;
+    private javax.swing.JButton btnPronunciar;
     private javax.swing.JButton btnReconocer;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
